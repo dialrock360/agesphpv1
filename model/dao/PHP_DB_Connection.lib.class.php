@@ -1,5 +1,6 @@
 <?php
 
+require_once 'MyDB.php';
 
 require_once "database.php";
 require_once "SM_Error.lib.class.php";
@@ -12,6 +13,37 @@ function getConnexion(){
                                 $user,
                                 $password,
                                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    }catch (PDOException $ex){
+        $erreur_base = $ex->getMessage();
+        if(substr($erreur_base, 0, 39) == "SQLSTATE[HY000] [1049] Unknown database")
+        {   
+            $error = new SM_Error();
+            $message = "Hooo vous n'avez pas encore créé la base de données? :)";
+            $error->messageError($message);
+            
+        }
+        else if(substr($erreur_base, 0, 22) == "SQLSTATE[HY000] [1045]")
+        {   
+            $error = new SM_Error();
+            $message = "Hooo vous n'avez pas precisé les bons parametres USER et PASSWORD :)";
+            $error->messageError($message); 
+            
+        } else {
+            $error = new SM_Error();
+            $message = $ex->getMessage();
+            $error->messageError($message);
+            
+        }
+    }
+    return $db;
+}
+
+function getSqliteConnexion(){
+    
+  
+    try{
+         $db = new PDO('sqlite:sendsqlitedb');
+
     }catch (PDOException $ex){
         $erreur_base = $ex->getMessage();
         if(substr($erreur_base, 0, 39) == "SQLSTATE[HY000] [1049] Unknown database")

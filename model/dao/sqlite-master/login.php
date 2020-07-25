@@ -1,0 +1,70 @@
+<?php
+require_once 'MyDB.php';
+session_start();
+     if (isset($_POST["login"])){
+         
+   $db = new MyDB();
+   if(!$db){
+      echo $db->lastErrorMsg();
+   } else {
+      //echo "Opened database successfully\n";
+   }
+
+  echo $sql ='SELECT * from USERS where username="'.$_POST["username"].'";';
+
+
+   $ret = $db->query($sql);
+   while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
+      $id=$row['id'];
+      $username=$row["username"];
+      $password=$row['password'];
+  }
+    if ($id!=""){
+        if ($password==$_POST["password"]){
+           $_SESSION["login"]=$username;
+           header('Location: index.php');    
+        }else{
+          
+          echo "Wrong Password";
+        }
+      }else{
+       echo "User not exist, please register to continue!";
+      }
+   //echo "Operation done successfully\n";
+   $db->close();
+     }
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Log in</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <a  href="registration.php" class="btn btn-primary">Sign Up</a>
+  <h2>Vertical (basic) form</h2>
+  <form role="form"  method="post" action="login.php">
+    <div class="form-group">
+      <label for="usr_name">Username:</label>
+      <input type="text" class="form-control" id="usr_name" name="username"  placeholder="Enter Username">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default" name="login">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

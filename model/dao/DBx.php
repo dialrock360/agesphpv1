@@ -2,7 +2,7 @@
 
 
 
-class DB  {
+class DBx  {
 
     private  $tablename;
     private  $databasename;
@@ -11,9 +11,8 @@ class DB  {
 
         private $db;
         public function __construct(){
-            require_once "dao/PHP_DB_Connection.lib.class.php";
-           // $this->db =  new PDO('sqlite:sendsqlitedb');
-           $this->db = getConnexion();
+            //require_once "dao/PHP_DB_Connection.lib.class.php";
+           // $this->db = getConnexion();
         }
     /**
      * @return mixed
@@ -89,48 +88,40 @@ class DB  {
         }elseif(!array_key_exists("start",$conditions) && array_key_exists("limit",$conditions)){
             $sql .= ' LIMIT '.$conditions['limit'];
         }
-      
-/*echo $sql;
-        echo  '<hr/><hr/><hr/>'; 
-        echo "fetch :  ".json_encode($result->fetch()); // wrong details*/
-       
-        try
-        {
-          //open the database
-         
+/*
+echo $sql;
+        echo  '<hr/><hr/><hr/>';*/
+        $result = $this->db->query($sql);
 
-          $result = $this->db->query($sql);
-                    if(array_key_exists("return_type",$conditions) && $conditions['return_type'] != 'all'){
-                        switch($conditions['return_type']){
-                            case 'count':
-                                $data = $result->rowCount();
-                                break;
-                            case 'single':
-                                $data = $result->fetch();
-                                break;
-                            case 'many':
-                                $data = $result->fetchAll();
-                                break;
-                            default:
-                                $data = '';
-                        }
-                    }else{
-                        if($this->db != null){
-                            while($row = $result->fetchAll()){
-                                $data[] = $row;
-                            }
-                        }
-                    }
-          // close the database connection
-          $db = NULL;
+        if(array_key_exists("return_type",$conditions) && $conditions['return_type'] != 'all'){
+            switch($conditions['return_type']){
+                case 'count':
+                    $data = $result->rowCount();
+                    break;
+                case 'single':
+                    $data = $result->fetch();
+                    break;
+                case 'many':
+                    $data = $result->fetchAll();
+                    break;
+                default:
+                    $data = '';
+            }
+        }else{
+            if($this->db != null){
+                while($row = $result->fetchAll()){
+                    $data[] = $row;
+                }
+            }
         }
-        catch(PDOException $e)
-        {
-          print 'Exception : '.$e->getMessage();
-        }
-       
 
-        return $data;
+        if($this->db != null)
+        {
+            return $data;
+        }else{
+            return null;
+        }
+
     }
 
  
@@ -153,7 +144,6 @@ class DB  {
                 default:
                     $data = '';
             }
-           
         }
 		 return $data ;
 

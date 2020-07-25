@@ -49,7 +49,7 @@ if(isset($_POST['login']))
         }
         else{
 
-            echo "Mots de Pass ou Login Erroné."; // wrong details
+            echo "Mots de Pass ou Login Erroné.".json_encode($usr); // wrong details
         }
 }
 
