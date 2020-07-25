@@ -1,0 +1,186 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Messages/index">Index Messages</a></li>
+                        <li><a href="{$url_base}Messages/add">Ajout Messages</a></li>
+                        <li><a href="{$url_base}Messages/getID/1">Get id Messages 1</a></li>
+                        <li><a href="{$url_base}Messages/liste">Liste Messages </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Messages/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($messages)} {$messages['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_service de messages</label>
+
+         <select name="id_service"  class="form-control champ" id="id_service">   
+
+                        <option  value="{if isset($messages)} {$messages['id_service']}{else}0{/if}" selected>id_service de messages</option>
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_message de messages</label>
+
+     <input class="form-control" type="date" name="date_message"  value="{if isset($messages)} {$messages['date_message']}{else} {/if}"  id="date_message"  placeholder="date_message"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">object_message de messages</label>
+
+     <input class="form-control" type="text" name="object_message"  value="{if isset($messages)} {$messages['object_message']}{else} {/if}"  id="object_message"  placeholder="object_message"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">pj_message de messages</label>
+
+     <input class="form-control" type="text" name="pj_message"  value="{if isset($messages)} {$messages['pj_message']}{else} {/if}"  id="pj_message"  placeholder="pj_message"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">origine_message de messages</label>
+
+     <input class="form-control" type="text" name="origine_message"  value="{if isset($messages)} {$messages['origine_message']}{else} {/if}"  id="origine_message"  placeholder="origine_message"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cible_message de messages</label>
+
+     <input class="form-control" type="text" name="cible_message"  value="{if isset($messages)} {$messages['cible_message']}{else} {/if}"  id="cible_message"  placeholder="cible_message"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">attribute_10 de messages</label>
+
+     <input class="form-control" type="text" name="attribute_10"  value="{if isset($messages)} {$messages['attribute_10']}{else} {/if}"  id="attribute_10"  placeholder="attribute_10"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">attribute_11 de messages</label>
+
+     <input class="form-control" type="text" name="attribute_11"  value="{if isset($messages)} {$messages['attribute_11']}{else} {/if}"  id="attribute_11"  placeholder="attribute_11"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_origine de messages</label>
+
+     <input class="form-control" type="number" name="id_origine"  value="{if isset($messages)} {$messages['id_origine']}{else}0{/if}"  id="id_origine"  placeholder="id_origine"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_sible de messages</label>
+
+     <input class="form-control" type="number" name="id_sible"  value="{if isset($messages)} {$messages['id_sible']}{else}0{/if}"  id="id_sible"  placeholder="id_sible"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">content_message de messages</label>
+
+     <input class="form-control" type="text" name="content_message"  value="{if isset($messages)} {$messages['content_message']}{else} {/if}"  id="content_message"  placeholder="content_message"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Messages/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

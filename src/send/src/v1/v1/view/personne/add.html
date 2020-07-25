@@ -1,0 +1,198 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Personne/index">Index Personne</a></li>
+                        <li><a href="{$url_base}Personne/add">Ajout Personne</a></li>
+                        <li><a href="{$url_base}Personne/getID/1">Get id Personne 1</a></li>
+                        <li><a href="{$url_base}Personne/liste">Liste Personne </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Personne/add">
+     <input class="form-control" type="hidden" name="id"  value="0"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_service de personne</label>
+
+         <select name="id_service"  class="form-control champ" id="id_service">   
+
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_personne de personne</label>
+
+     <input class="form-control" type="text" name="nom_personne"  value=""  id="nom_personne"  placeholder="nom_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prenom_personne de personne</label>
+
+     <input class="form-control" type="text" name="prenom_personne"  value=""  id="prenom_personne"  placeholder="prenom_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">genre_personne de personne</label>
+
+         <select name="genre_personne"  class="form-control champ" id="genre_personne">   
+                        <option selected value="homme">homme</option>
+                        <option selected value="femme">femme</option>
+                        <option selected value="entreprise">entreprise</option>
+                        <option selected value="autre">autre</option>
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_naiss_personne de personne</label>
+
+     <input class="form-control" type="date" name="date_naiss_personne"  value=""  id="date_naiss_personne"  placeholder="date_naiss_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">lieu_naiss_personne de personne</label>
+
+     <input class="form-control" type="text" name="lieu_naiss_personne"  value=""  id="lieu_naiss_personne"  placeholder="lieu_naiss_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nationalite_personne de personne</label>
+
+     <input class="form-control" type="text" name="nationalite_personne"  value=""  id="nationalite_personne"  placeholder="nationalite_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">typepiece_personne de personne</label>
+
+         <select name="typepiece_personne"  class="form-control champ" id="typepiece_personne">   
+                        <option selected value="cni">cni</option>
+                        <option selected value="passeport">passeport</option>
+                        <option selected value="rc">rc</option>
+                        <option selected value="autre">autre</option>
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">numpiece_personne de personne</label>
+
+     <input class="form-control" type="text" name="numpiece_personne"  value=""  id="numpiece_personne"  placeholder="numpiece_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">photo_personne de personne</label>
+
+     <input class="form-control" type="file" name="photo_personne"  value=""  id="photo_personne"  placeholder="photo_personne"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">details_personne de personne</label>
+
+     <textarea rows="5" name="details_personne"  id="details_personne" >  </textarea>
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_personne"  value="0"  id="flag_personne"   placeholder="flag_personne"   />
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

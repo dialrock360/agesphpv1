@@ -1,0 +1,147 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Categorie/index">Index Categorie</a></li>
+                        <li><a href="{$url_base}Categorie/add">Ajout Categorie</a></li>
+                        <li><a href="{$url_base}Categorie/getID/1">Get id Categorie 1</a></li>
+                        <li><a href="{$url_base}Categorie/liste">Liste Categorie </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Categorie/add">
+     <input class="form-control" type="hidden" name="id"  value="0"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_famille de categorie</label>
+
+         <select name="id_famille"  class="form-control champ" id="id_famille">   
+
+         {if isset($familles)}    
+                    {foreach from=$familles item=champ}
+
+                        <option  value={$champ['id']}>famille id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+         {if isset($familles)}    
+                    {foreach from=$familles item=champ}
+
+                        <option  value={$champ['id']}>famille id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_nomenclature_article de categorie</label>
+
+         <select name="id_nomenclature_article"  class="form-control champ" id="id_nomenclature_article">   
+
+
+                                  {/foreach}
+                          {/if}
+
+         {if isset($nomenclature_articles)}    
+                    {foreach from=$nomenclature_articles item=champ}
+
+                        <option  value={$champ['id']}>nomenclature_article id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_categorie de categorie</label>
+
+     <input class="form-control" type="text" name="nom_categorie"  value=""  id="nom_categorie"  placeholder="nom_categorie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbr_produit_categorie de categorie</label>
+
+     <input class="form-control" type="number" name="nbr_produit_categorie"  value="0"  id="nbr_produit_categorie"  placeholder="nbr_produit_categorie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">valeur_categorie de categorie</label>
+
+     <input class="form-control" type="number" name="valeur_categorie"  value="0"  id="valeur_categorie"  placeholder="valeur_categorie"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_categorie"  value="0"  id="flag_categorie"   placeholder="flag_categorie"   />
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

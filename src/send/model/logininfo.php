@@ -1,0 +1,10 @@
+<?php
+$level='leveluser';$idUs='id';$nomUs='nom';$prenomUs='prenom';$imgUs='photo';$emailUs='email';$telUs='tel';//$idUs='id';
+$leveluser=Log_info($level,$log);
+$iduser=Log_info($idUs,$log);
+$imguser=Log_info($imgUs,$log);
+$nomser=Log_info($nomUs,$log);
+$prenomuser=Log_info($prenomUs,$log);
+$emailuser=Log_info($emailUs,$log);
+$teluser=Log_info($telUs,$log);
+?>

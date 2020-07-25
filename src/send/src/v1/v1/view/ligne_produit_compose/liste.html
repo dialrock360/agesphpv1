@@ -1,0 +1,89 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Ligne_produit_compose/index">Index Ligne_produit_compose</a></li>
+                        <li><a href="{$url_base}Ligne_produit_compose/add">Ajout Ligne_produit_compose</a></li>
+                        <li><a href="{$url_base}Ligne_produit_compose/getID/1">Get id Ligne_produit_compose 1</a></li>
+                        <li><a href="{$url_base}Ligne_produit_compose/liste">Liste Ligne_produit_compose </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($ligne_produit_composes) && $ligne_produit_composes != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Ligne_produit_compose</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Id_produit</th>
+                                 <th>Id_article</th>
+                                 <th>Pxa_ligne_produit_compose</th>
+                                 <th>Qnt_ligne_produit_compose</th>
+                                 <th>Mts_ligne_produit_compose</th>
+                                 <th>Position_ligne_produit_compose</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$ligne_produit_composes item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["id_produit"]}</td>
+                                 <td>{$obj["id_article"]}</td>
+                                 <td>{$obj["pxa_ligne_produit_compose"]}</td>
+                                 <td>{$obj["qnt_ligne_produit_compose"]}</td>
+                                 <td>{$obj["mts_ligne_produit_compose"]}</td>
+                                 <td>{$obj["position_ligne_produit_compose"]}</td>
+                                    <td><a href="{$url_base}Ligne_produit_compose/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Ligne_produit_compose/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

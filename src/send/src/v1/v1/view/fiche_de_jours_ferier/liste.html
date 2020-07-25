@@ -1,0 +1,81 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Fiche_de_jours_ferier/index">Index Fiche_de_jours_ferier</a></li>
+                        <li><a href="{$url_base}Fiche_de_jours_ferier/add">Ajout Fiche_de_jours_ferier</a></li>
+                        <li><a href="{$url_base}Fiche_de_jours_ferier/getID/1">Get id Fiche_de_jours_ferier 1</a></li>
+                        <li><a href="{$url_base}Fiche_de_jours_ferier/liste">Liste Fiche_de_jours_ferier </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($fiche_de_jours_feriers) && $fiche_de_jours_feriers != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Fiche_de_jours_ferier</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Annee_exercice</th>
+                                 <th>Nbr_jour_ferie</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$fiche_de_jours_feriers item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["annee_exercice"]}</td>
+                                 <td>{$obj["nbr_jour_ferie"]}</td>
+                                    <td><a href="{$url_base}Fiche_de_jours_ferier/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Fiche_de_jours_ferier/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

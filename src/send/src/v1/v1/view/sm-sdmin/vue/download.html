@@ -1,0 +1,23 @@
+
+
+<div class="panel panel-warning">
+    <div class="card-header">Génerer vue avec la base de données  </div>
+    <div class="panel-body">
+
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-body">
+
+                <form method="post" action="{$url_base}SM_Admin/generate_vue/nulle" enctype="multipart/form-data">
+
+
+                    {include file='src/view/sm-sdmin/template/download.tpl'}
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="importer" value="Generer"/>
+                        <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

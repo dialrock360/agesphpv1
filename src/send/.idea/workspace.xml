@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="799cc52c-7103-47b8-8ee8-ab023388d2e1" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ficherecette.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/page/form/ficherecette.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-289">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functionsPrd.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/functionsPrd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="1051" column="36" lean-forward="false" selection-start-line="1051" selection-start-column="36" selection-end-line="1051" selection-end-column="36" />
+              <folding>
+                <marker date="1483309968369" expanded="true" signature="129:164" ph="SELECT * FRO... fond" />
+                <marker date="1483309968369" expanded="true" signature="867:995" ph="SELECT IDFA FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="906:994" ph="SELECT IDFA CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="949:993" ph="SELECT ID_CA... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="1647:1687" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="2660:2698" ph="SELECT * FRO... produit_cmp" />
+                <marker date="1483309968369" expanded="true" signature="3088:3127" ph="SELECT * FRO... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="4001:4045" ph="SELECT * FRO... CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="4701:4785" ph="SELECT * FRO... CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="4742:4781" ph="SELECT ID_CA... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="6101:6141" ph="SELECT * FRO... v_select_produit_facture" />
+                <marker date="1483309968369" expanded="true" signature="6187:6224" ph="SELECT * FRO... v_select_produit_recu" />
+                <marker date="1483309968369" expanded="true" signature="6270:6311" ph="SELECT * FRO... v_select_produit_composer" />
+                <marker date="1483309968369" expanded="true" signature="6360:6399" ph="SELECT * FRO... v_select_produit_charge" />
+                <marker date="1483309968369" expanded="true" signature="6973:7011" ph="SELECT * FRO... produit_cmp" />
+                <marker date="1483309968369" expanded="true" signature="8490:8553" ph="SELECT * FRO... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="9737:9864" ph="SELECT * FRO... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="9783:9849" ph="SELECT `ID_C... CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="10581:10617" ph="SELECT * FRO... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="11705:11743" ph="SELECT * FRO... produit_cmp" />
+                <marker date="1483309968369" expanded="true" signature="12361:12395" ph="SELECT * FRO... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="13959:14015" ph="SELECT * FRO... CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="14485:14535" ph="SELECT * FRO... CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="15072:15123" ph="SELECT * FRO... CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="16612:16658" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="17228:17263" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="18056:18162" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="18104:18157" ph="SELECT IDFA CATEGORIE" />
+                <marker date="1483309968369" expanded="true" signature="18830:18891" ph="SELECT DISTI... etat_compte" />
+                <marker date="1483309968369" expanded="true" signature="19270:19371" ph="SELECT DISTI... mouvement" />
+                <marker date="1483309968369" expanded="true" signature="19726:19791" ph="SELECT DISTI... mouvement" />
+                <marker date="1483309968369" expanded="true" signature="20231:20294" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="20754:20805" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="21333:21380" ph="SELECT * FRO... FAMILLE" />
+                <marker date="1483309968369" expanded="true" signature="21910:21955" ph="SELECT * FRO... CONDIS" />
+                <marker date="1483309968369" expanded="true" signature="22421:22470" ph="SELECT * FRO... CONDIS" />
+                <marker date="1483309968369" expanded="true" signature="23442:23486" ph="SELECT * FRO... CONDIS" />
+                <marker date="1483309968369" expanded="true" signature="23940:24038" ph="SELECT * FRO... CONDIS" />
+                <marker date="1483309968369" expanded="true" signature="23986:24033" ph="SELECT IDC F... PRODUIT" />
+                <marker date="1483309968369" expanded="true" signature="24312:24363" ph="SELECT * FRO... CONDIS" />
+                <marker date="1483309968369" expanded="true" signature="24639:24728" ph="SELECT DISTI... v_facture" />
+                <marker date="1483309968369" expanded="true" signature="25328:25448" ph="SELECT DISTI... v_facture" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/view/page/form/ficherecette.php" />
+        <option value="$PROJECT_DIR$/model/functionsPrd.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="send" type="b2602c69:ProjectViewProjectNode" />
+              <item name="send" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="send" type="b2602c69:ProjectViewProjectNode" />
+              <item name="send" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="send" type="b2602c69:ProjectViewProjectNode" />
+              <item name="send" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="page" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="send" type="b2602c69:ProjectViewProjectNode" />
+              <item name="send" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="799cc52c-7103-47b8-8ee8-ab023388d2e1" name="Default" comment="" />
+      <created>1514844346664</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1514844346664</updated>
+      <workItem from="1514844348791" duration="1197000" />
+      <workItem from="1483309580242" duration="703000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1900000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24659607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/view/page/form/ficherecette.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/functionsPrd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17850">
+          <caret line="1050" column="3" lean-forward="true" selection-start-line="1050" selection-start-column="3" selection-end-line="1050" selection-end-column="3" />
+          <folding>
+            <marker date="1483309968369" expanded="true" signature="129:164" ph="SELECT * FRO... fond" />
+            <marker date="1483309968369" expanded="true" signature="867:995" ph="SELECT IDFA FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="906:994" ph="SELECT IDFA CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="949:993" ph="SELECT ID_CA... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="1647:1687" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="2660:2698" ph="SELECT * FRO... produit_cmp" />
+            <marker date="1483309968369" expanded="true" signature="3088:3127" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="4001:4045" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="4701:4785" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="4742:4781" ph="SELECT ID_CA... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="6101:6141" ph="SELECT * FRO... v_select_produit_facture" />
+            <marker date="1483309968369" expanded="true" signature="6187:6224" ph="SELECT * FRO... v_select_produit_recu" />
+            <marker date="1483309968369" expanded="true" signature="6270:6311" ph="SELECT * FRO... v_select_produit_composer" />
+            <marker date="1483309968369" expanded="true" signature="6360:6399" ph="SELECT * FRO... v_select_produit_charge" />
+            <marker date="1483309968369" expanded="true" signature="6973:7011" ph="SELECT * FRO... produit_cmp" />
+            <marker date="1483309968369" expanded="true" signature="8490:8553" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="9737:9864" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="9783:9849" ph="SELECT `ID_C... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="10581:10617" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="11705:11743" ph="SELECT * FRO... produit_cmp" />
+            <marker date="1483309968369" expanded="true" signature="12361:12395" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="13959:14015" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="14485:14535" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="15072:15123" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="16612:16658" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="17228:17263" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="18056:18162" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="18104:18157" ph="SELECT IDFA CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="18830:18891" ph="SELECT DISTI... etat_compte" />
+            <marker date="1483309968369" expanded="true" signature="19270:19371" ph="SELECT DISTI... mouvement" />
+            <marker date="1483309968369" expanded="true" signature="19726:19791" ph="SELECT DISTI... mouvement" />
+            <marker date="1483309968369" expanded="true" signature="20231:20294" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="20754:20805" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="21333:21380" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="21910:21955" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="22421:22470" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="23442:23486" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="23940:24038" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="23986:24033" ph="SELECT IDC F... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="24312:24363" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="24639:24728" ph="SELECT DISTI... v_facture" />
+            <marker date="1483309968369" expanded="true" signature="25328:25448" ph="SELECT DISTI... v_facture" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/page/form/ficherecette.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/functionsPrd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="1051" column="36" lean-forward="false" selection-start-line="1051" selection-start-column="36" selection-end-line="1051" selection-end-column="36" />
+          <folding>
+            <marker date="1483309968369" expanded="true" signature="129:164" ph="SELECT * FRO... fond" />
+            <marker date="1483309968369" expanded="true" signature="867:995" ph="SELECT IDFA FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="906:994" ph="SELECT IDFA CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="949:993" ph="SELECT ID_CA... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="1647:1687" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="2660:2698" ph="SELECT * FRO... produit_cmp" />
+            <marker date="1483309968369" expanded="true" signature="3088:3127" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="4001:4045" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="4701:4785" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="4742:4781" ph="SELECT ID_CA... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="6101:6141" ph="SELECT * FRO... v_select_produit_facture" />
+            <marker date="1483309968369" expanded="true" signature="6187:6224" ph="SELECT * FRO... v_select_produit_recu" />
+            <marker date="1483309968369" expanded="true" signature="6270:6311" ph="SELECT * FRO... v_select_produit_composer" />
+            <marker date="1483309968369" expanded="true" signature="6360:6399" ph="SELECT * FRO... v_select_produit_charge" />
+            <marker date="1483309968369" expanded="true" signature="6973:7011" ph="SELECT * FRO... produit_cmp" />
+            <marker date="1483309968369" expanded="true" signature="8490:8553" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="9737:9864" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="9783:9849" ph="SELECT `ID_C... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="10581:10617" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="11705:11743" ph="SELECT * FRO... produit_cmp" />
+            <marker date="1483309968369" expanded="true" signature="12361:12395" ph="SELECT * FRO... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="13959:14015" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="14485:14535" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="15072:15123" ph="SELECT * FRO... CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="16612:16658" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="17228:17263" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="18056:18162" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="18104:18157" ph="SELECT IDFA CATEGORIE" />
+            <marker date="1483309968369" expanded="true" signature="18830:18891" ph="SELECT DISTI... etat_compte" />
+            <marker date="1483309968369" expanded="true" signature="19270:19371" ph="SELECT DISTI... mouvement" />
+            <marker date="1483309968369" expanded="true" signature="19726:19791" ph="SELECT DISTI... mouvement" />
+            <marker date="1483309968369" expanded="true" signature="20231:20294" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="20754:20805" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="21333:21380" ph="SELECT * FRO... FAMILLE" />
+            <marker date="1483309968369" expanded="true" signature="21910:21955" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="22421:22470" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="23442:23486" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="23940:24038" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="23986:24033" ph="SELECT IDC F... PRODUIT" />
+            <marker date="1483309968369" expanded="true" signature="24312:24363" ph="SELECT * FRO... CONDIS" />
+            <marker date="1483309968369" expanded="true" signature="24639:24728" ph="SELECT DISTI... v_facture" />
+            <marker date="1483309968369" expanded="true" signature="25328:25448" ph="SELECT DISTI... v_facture" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

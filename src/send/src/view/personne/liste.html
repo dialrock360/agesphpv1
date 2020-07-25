@@ -1,0 +1,101 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Personne/index">Index Personne</a></li>
+                        <li><a href="{$url_base}Personne/add">Ajout Personne</a></li>
+                        <li><a href="{$url_base}Personne/getID/1">Get id Personne 1</a></li>
+                        <li><a href="{$url_base}Personne/liste">Liste Personne </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($personnes) && $personnes != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Personne</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Id_service</th>
+                                 <th>Nom_personne</th>
+                                 <th>Prenom_personne</th>
+                                 <th>Genre_personne</th>
+                                 <th>Date_naiss_personne</th>
+                                 <th>Lieu_naiss_personne</th>
+                                 <th>Nationalite_personne</th>
+                                 <th>Typepiece_personne</th>
+                                 <th>Numpiece_personne</th>
+                                 <th>Photo_personne</th>
+                                 <th>Details_personne</th>
+                                 <th>Flag_personne</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$personnes item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["id_service"]}</td>
+                                 <td>{$obj["nom_personne"]}</td>
+                                 <td>{$obj["prenom_personne"]}</td>
+                                 <td>{$obj["genre_personne"]}</td>
+                                 <td>{$obj["date_naiss_personne"]}</td>
+                                 <td>{$obj["lieu_naiss_personne"]}</td>
+                                 <td>{$obj["nationalite_personne"]}</td>
+                                 <td>{$obj["typepiece_personne"]}</td>
+                                 <td>{$obj["numpiece_personne"]}</td>
+                                 <td>{$obj["photo_personne"]}</td>
+                                 <td>{$obj["details_personne"]}</td>
+                                 <td>{$obj["flag_personne"]}</td>
+                                    <td><a href="{$url_base}Personne/edit/{$obj['id']}">Editer</a></td>
+                                    <td><a href="{$url_base}Personne/delete/{$obj['id']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

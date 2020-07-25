@@ -1,0 +1,86 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Programme/index">Index Programme</a></li>
+                        <li><a href="{$url_base}Programme/add">Ajout Programme</a></li>
+                        <li><a href="{$url_base}Programme/getID/1">Get id Programme 1</a></li>
+                        <li><a href="{$url_base}Programme/liste">Liste Programme </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+				{if isset($programmes)}
+					{if $programmes != null}
+						<table class="table table-bordered table-stripped">
+			                <caption  > LISTE DE Programme</caption>
+							<tr>
+								<th>Nom_programme</th>
+								<th>Id_service</th>
+								<th>Date_programme</th>
+								<th>Datefin_programme</th>
+								<th>Nbr_projet_programme</th>
+								<th>Etat_programme</th>
+								<th>Flag_programme</th>
+								<th>Action</th>
+								<th>Action</th>
+							</tr>
+							{foreach from=$programmes item=obj}
+								<tr>
+								<td>{$obj["nom_programme"]}</td>
+								<td>{$obj["id_service"]}</td>
+								<td>{$obj["date_programme"]}</td>
+								<td>{$obj["datefin_programme"]}</td>
+								<td>{$obj["nbr_projet_programme"]}</td>
+								<td>{$obj["etat_programme"]}</td>
+								<td>{$obj["flag_programme"]}</td>
+									<td><a href="{$url_base}Programme/delete/id/{$obj["id"]}">Supprimer</a></td>
+									<td><a href="{$url_base}Programme/edit/id/{$obj["id"]}"]}">Editer</a></td>
+								</tr>
+							{/foreach}
+						</table>
+					{else}
+						Liste vide
+					{/if}
+				{/if}
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

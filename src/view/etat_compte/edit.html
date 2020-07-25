@@ -1,0 +1,136 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Etat_compte/index">Index Etat_compte</a></li>
+                        <li><a href="{$url_base}Etat_compte/add">Ajout Etat_compte</a></li>
+                        <li><a href="{$url_base}Etat_compte/getID/1">Get id Etat_compte 1</a></li>
+                        <li><a href="{$url_base}Etat_compte/liste">Liste Etat_compte </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Etat_compte/update">
+     <input class="form-control" type="hidden" name="ide"  value="{if isset($etat_compte)} {$etat_compte['ide']}{else}0{/if}"  id="ide"  placeholder="ide"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idfa de etat_compte</label>
+
+         <select name="idfa"  class="form-control champ" id="idfa">   
+
+                        <option  value="{if isset($etat_compte)} {$etat_compte['idfa']}{else}0{/if}" selected>idfa de etat_compte</option>
+         {if isset($familles)}    
+                    {foreach from=$familles item=champ}
+
+                        <option  value={$champ['idfa']}>famille id {$champ['idfa']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idmouv de etat_compte</label>
+
+     <input class="form-control" type="number" name="idmouv"  value="{if isset($etat_compte)} {$etat_compte['idmouv']}{else}0{/if}"  id="idmouv"  placeholder="idmouv"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">depense de etat_compte</label>
+
+     <input class="form-control" type="number" name="depense"  value="{if isset($etat_compte)} {$etat_compte['depense']}{else}0{/if}"  id="depense"  placeholder="depense"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">gains de etat_compte</label>
+
+     <input class="form-control" type="number" name="gains"  value="{if isset($etat_compte)} {$etat_compte['gains']}{else}0{/if}"  id="gains"  placeholder="gains"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">stock de etat_compte</label>
+
+     <input class="form-control" type="number" name="stock"  value="{if isset($etat_compte)} {$etat_compte['stock']}{else}0{/if}"  id="stock"  placeholder="stock"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">datee de etat_compte</label>
+
+     <input class="form-control" type="date" name="datee"  value="{if isset($etat_compte)} {$etat_compte['datee']}{else} {/if}"  id="datee"  placeholder="datee"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Etat_compte/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

@@ -1,0 +1,133 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Projet/index">Index Projet</a></li>
+                        <li><a href="{$url_base}Projet/add">Ajout Projet</a></li>
+                        <li><a href="{$url_base}Projet/getID/1">Get id Projet 1</a></li>
+                        <li><a href="{$url_base}Projet/liste">Liste Projet </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+               								{if isset($ok)}
+               								{if $ok != 0}
+                    								<div class="alert alert-success">Données ajoutées!</div>
+               								{else}
+                    								<div class="alert alert-danger">Erreur!</div>
+               								{/if}
+               								{/if}
+                                      <form method="post" action="{$url_base}Projet/update">
+                                                  <input class="form-control" type="hidden" name="id" value="{if isset($projet)} {$projet['id']} {/if}" id="id"/>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Equipes </label>
+                                       <select name="id_equipe" class="form-control champ" >                                                <option selected value="{$projet['id_equipe']}">{if isset($projet)} {$projet['id_equipe']}   {/if}</option>
+                                                {foreach from=$equipes item=champ}
+                                                <option value="{$champ['id']}">{$champ['id_service']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Programmes </label>
+                                       <select name="id_programme" class="form-control champ" >                                                <option selected value="{$projet['id_programme']}">{if isset($projet)} {$projet['id_programme']}   {/if}</option>
+                                                {foreach from=$programmes item=champ}
+                                                <option value="{$champ['id']}">{$champ['nom_programme']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Type_projets </label>
+                                       <select name="id_type_projet" class="form-control champ" >                                                <option selected value="{$projet['id_type_projet']}">{if isset($projet)} {$projet['id_type_projet']}   {/if}</option>
+                                                {foreach from=$type_projets item=champ}
+                                                <option value="{$champ['id']}">{$champ['id_service']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">id_programme de Projet</label>
+                                                <input class="form-control" type="number" name="id_programme" value="{if isset($projet)} {$projet['id_programme']} {/if}"  id="id_programme"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">id_equipe de Projet</label>
+                                                <input class="form-control" type="number" name="id_equipe" value="{if isset($projet)} {$projet['id_equipe']} {/if}"  id="id_equipe"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">nom_projet de Projet</label>
+                                                <input class="form-control" type="text" name="nom_projet" value="{if isset($projet)} {$projet['nom_projet']} {/if}" id="nom_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">cout_projet de Projet</label>
+                                                <input class="form-control" type="number" name="cout_projet" value="{if isset($projet)} {$projet['cout_projet']} {/if}"  id="cout_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">valeur_projet de Projet</label>
+                                                <input class="form-control" type="number" name="valeur_projet" value="{if isset($projet)} {$projet['valeur_projet']} {/if}"  id="valeur_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">date_projet de Projet</label>
+                                                <input class="form-control" type="text" name="date_projet" value="{if isset($projet)} {$projet['date_projet']} {/if}" id="date_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">datefin_projet de Projet</label>
+                                                <input class="form-control" type="date" name="datefin_projet" value="{if isset($projet)} {$projet['datefin_projet']} {/if}"  id="datefin_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">color_projet de Projet</label>
+                                                <input class="form-control" type="text" name="color_projet" value="{if isset($projet)} {$projet['color_projet']} {/if}" id="color_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">etat_projet de Projet</label>
+                                                <input class="form-control" type="number" name="etat_projet" value="{if isset($projet)} {$projet['etat_projet']} {/if}"  id="etat_projet"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">flag_projet de Projet</label>
+                                                <input class="form-control" type="number" name="flag_projet" value="{if isset($projet)} {$projet['flag_projet']} {/if}"  id="flag_projet"/>
+                                       </div>
+
+
+                                              <div class="form-group">
+                                                         <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                                                         <a class="btn btn-info" href="{$url_base}Projet/liste">Retour</a>
+                                                     </div>
+                                      </form>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

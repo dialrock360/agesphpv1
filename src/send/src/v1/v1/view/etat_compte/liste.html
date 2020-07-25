@@ -1,0 +1,87 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Etat_compte/index">Index Etat_compte</a></li>
+                        <li><a href="{$url_base}Etat_compte/add">Ajout Etat_compte</a></li>
+                        <li><a href="{$url_base}Etat_compte/getID/1">Get id Etat_compte 1</a></li>
+                        <li><a href="{$url_base}Etat_compte/liste">Liste Etat_compte </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($etat_comptes) && $etat_comptes != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Etat_compte</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Id_famille</th>
+                                 <th>Id_mouvement</th>
+                                 <th>Date_etat_compte</th>
+                                 <th>Depense_etat_compte</th>
+                                 <th>Gain_etat_compte</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$etat_comptes item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["id_famille"]}</td>
+                                 <td>{$obj["id_mouvement"]}</td>
+                                 <td>{$obj["date_etat_compte"]}</td>
+                                 <td>{$obj["depense_etat_compte"]}</td>
+                                 <td>{$obj["gain_etat_compte"]}</td>
+                                    <td><a href="{$url_base}Etat_compte/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Etat_compte/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

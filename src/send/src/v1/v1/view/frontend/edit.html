@@ -1,0 +1,186 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Frontend/index">Index Frontend</a></li>
+                        <li><a href="{$url_base}Frontend/add">Ajout Frontend</a></li>
+                        <li><a href="{$url_base}Frontend/getID/1">Get id Frontend 1</a></li>
+                        <li><a href="{$url_base}Frontend/liste">Liste Frontend </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Frontend/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($frontend)} {$frontend['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_service de frontend</label>
+
+         <select name="id_service"  class="form-control champ" id="id_service">   
+
+                        <option  value="{if isset($frontend)} {$frontend['id_service']}{else}0{/if}" selected>id_service de frontend</option>
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">libele de frontend</label>
+
+     <input class="form-control" type="text" name="libele"  value="{if isset($frontend)} {$frontend['libele']}{else} {/if}"  id="libele"  placeholder="libele"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">slidebar de frontend</label>
+
+     <input class="form-control" type="text" name="slidebar"  value="{if isset($frontend)} {$frontend['slidebar']}{else} {/if}"  id="slidebar"  placeholder="slidebar"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_slidebar de frontend</label>
+
+     <input class="form-control" type="text" name="id_slidebar"  value="{if isset($frontend)} {$frontend['id_slidebar']}{else} {/if}"  id="id_slidebar"  placeholder="id_slidebar"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">classe_slidebar de frontend</label>
+
+     <input class="form-control" type="text" name="classe_slidebar"  value="{if isset($frontend)} {$frontend['classe_slidebar']}{else} {/if}"  id="classe_slidebar"  placeholder="classe_slidebar"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nmain de frontend</label>
+
+     <input class="form-control" type="text" name="nmain"  value="{if isset($frontend)} {$frontend['nmain']}{else} {/if}"  id="nmain"  placeholder="nmain"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">vmain de frontend</label>
+
+     <input class="form-control" type="text" name="vmain"  value="{if isset($frontend)} {$frontend['vmain']}{else} {/if}"  id="vmain"  placeholder="vmain"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">skin de frontend</label>
+
+     <input class="form-control" type="text" name="skin"  value="{if isset($frontend)} {$frontend['skin']}{else} {/if}"  id="skin"  placeholder="skin"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">theme de frontend</label>
+
+     <input class="form-control" type="text" name="theme"  value="{if isset($frontend)} {$frontend['theme']}{else} {/if}"  id="theme"  placeholder="theme"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cible de frontend</label>
+
+     <input class="form-control" type="text" name="cible"  value="{if isset($frontend)} {$frontend['cible']}{else} {/if}"  id="cible"  placeholder="cible"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">section de frontend</label>
+
+     <input class="form-control" type="text" name="section"  value="{if isset($frontend)} {$frontend['section']}{else} {/if}"  id="section"  placeholder="section"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Frontend/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

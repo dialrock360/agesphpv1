@@ -1,0 +1,334 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Contrat/index">Index Contrat</a></li>
+                        <li><a href="{$url_base}Contrat/add">Ajout Contrat</a></li>
+                        <li><a href="{$url_base}Contrat/getID/1">Get id Contrat 1</a></li>
+                        <li><a href="{$url_base}Contrat/liste">Liste Contrat </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Contrat/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($contrat)} {$contrat['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">type_contrat_id de contrat</label>
+
+         <select name="type_contrat_id"  class="form-control champ" id="type_contrat_id">   
+
+                        <option  value="{if isset($contrat)} {$contrat['type_contrat_id']}{else}0{/if}" selected>type_contrat_id de contrat</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['type_contrat_id']}{else}0{/if}" selected>type_contrat_id de contrat</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['type_contrat_id']}{else}0{/if}" selected>type_contrat_id de contrat</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['type_contrat_id']}{else}0{/if}" selected>type_contrat_id de contrat</option>
+         {if isset($type_contrats)}    
+                    {foreach from=$type_contrats item=champ}
+
+                        <option  value={$champ['id']}>type_contrat id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">personne_id de contrat</label>
+
+         <select name="personne_id"  class="form-control champ" id="personne_id">   
+
+                        <option  value="{if isset($contrat)} {$contrat['personne_id']}{else}0{/if}" selected>personne_id de contrat</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['personne_id']}{else}0{/if}" selected>personne_id de contrat</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['personne_id']}{else}0{/if}" selected>personne_id de contrat</option>
+         {if isset($personnes)}    
+                    {foreach from=$personnes item=champ}
+
+                        <option  value={$champ['id']}>personne id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['personne_id']}{else}0{/if}" selected>personne_id de contrat</option>
+         {if isset($personnes)}    
+                    {foreach from=$personnes item=champ}
+
+                        <option  value={$champ['id']}>personne id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">departement_id de contrat</label>
+
+         <select name="departement_id"  class="form-control champ" id="departement_id">   
+
+                        <option  value="{if isset($contrat)} {$contrat['departement_id']}{else}0{/if}" selected>departement_id de contrat</option>
+         {if isset($departements)}    
+                    {foreach from=$departements item=champ}
+
+                        <option  value={$champ['id']}>departement id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['departement_id']}{else}0{/if}" selected>departement_id de contrat</option>
+         {if isset($departements)}    
+                    {foreach from=$departements item=champ}
+
+                        <option  value={$champ['id']}>departement id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['departement_id']}{else}0{/if}" selected>departement_id de contrat</option>
+         {if isset($departements)}    
+                    {foreach from=$departements item=champ}
+
+                        <option  value={$champ['id']}>departement id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['departement_id']}{else}0{/if}" selected>departement_id de contrat</option>
+         {if isset($departements)}    
+                    {foreach from=$departements item=champ}
+
+                        <option  value={$champ['id']}>departement id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">modalite_contrat_id de contrat</label>
+
+         <select name="modalite_contrat_id"  class="form-control champ" id="modalite_contrat_id">   
+
+                        <option  value="{if isset($contrat)} {$contrat['modalite_contrat_id']}{else}0{/if}" selected>modalite_contrat_id de contrat</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['modalite_contrat_id']}{else}0{/if}" selected>modalite_contrat_id de contrat</option>
+         {if isset($modalite_contrats)}    
+                    {foreach from=$modalite_contrats item=champ}
+
+                        <option  value={$champ['id']}>modalite_contrat id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['modalite_contrat_id']}{else}0{/if}" selected>modalite_contrat_id de contrat</option>
+         {if isset($modalite_contrats)}    
+                    {foreach from=$modalite_contrats item=champ}
+
+                        <option  value={$champ['id']}>modalite_contrat id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($contrat)} {$contrat['modalite_contrat_id']}{else}0{/if}" selected>modalite_contrat_id de contrat</option>
+         {if isset($modalite_contrats)}    
+                    {foreach from=$modalite_contrats item=champ}
+
+                        <option  value={$champ['id']}>modalite_contrat id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">metier de contrat</label>
+
+     <input class="form-control" type="text" name="metier"  value="{if isset($contrat)} {$contrat['metier']}{else} {/if}"  id="metier"  placeholder="metier"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cv_contrat de contrat</label>
+
+     <input class="form-control" type="text" name="cv_contrat"  value="{if isset($contrat)} {$contrat['cv_contrat']}{else} {/if}"  id="cv_contrat"  placeholder="cv_contrat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">statut_contrat de contrat</label>
+
+     <input class="form-control" type="text" name="statut_contrat"  value="{if isset($contrat)} {$contrat['statut_contrat']}{else} {/if}"  id="statut_contrat"  placeholder="statut_contrat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">numsecu_sire de contrat</label>
+
+     <input class="form-control" type="text" name="numsecu_sire"  value="{if isset($contrat)} {$contrat['numsecu_sire']}{else} {/if}"  id="numsecu_sire"  placeholder="numsecu_sire"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">datedebut de contrat</label>
+
+     <input class="form-control" type="date" name="datedebut"  value="{if isset($contrat)} {$contrat['datedebut']}{else} {/if}"  id="datedebut"  placeholder="datedebut"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">datefin de contrat</label>
+
+     <input class="form-control" type="date" name="datefin"  value="{if isset($contrat)} {$contrat['datefin']}{else} {/if}"  id="datefin"  placeholder="datefin"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">duree_essai de contrat</label>
+
+     <input class="form-control" type="time" name="duree_essai"  value="{if isset($contrat)} {$contrat['duree_essai']}{else}0{/if}"  id="duree_essai"  placeholder="duree_essai"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">avantages_contrat de contrat</label>
+
+     <textarea rows="5" name="avantages_contrat"  id="avantages_contrat" > {if isset($contrat)} {$contrat['avantages_contrat']}{else} {/if} </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">preavie_demande_conger de contrat</label>
+
+     <input class="form-control" type="number" name="preavie_demande_conger"  value="{if isset($contrat)} {$contrat['preavie_demande_conger']}{else}0{/if}"  id="preavie_demande_conger"  placeholder="preavie_demande_conger"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbr_jr_conge_par_mois_tavail de contrat</label>
+
+     <input class="form-control" type="number" name="nbr_jr_conge_par_mois_tavail"  value="{if isset($contrat)} {$contrat['nbr_jr_conge_par_mois_tavail']}{else}0{/if}"  id="nbr_jr_conge_par_mois_tavail"  placeholder="nbr_jr_conge_par_mois_tavail"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">etat_contrat de contrat</label>
+
+     <input class="form-control" type="number" name="etat_contrat"  value="{if isset($contrat)} {$contrat['etat_contrat']}{else}0{/if}"  id="etat_contrat"  placeholder="etat_contrat"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_contract"  value="{if isset($contrat)} {$contrat['flag_contract']}{else}0{/if}"  id="flag_contract"   placeholder="flag_contract"   />
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Contrat/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

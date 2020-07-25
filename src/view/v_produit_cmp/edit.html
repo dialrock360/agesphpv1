@@ -1,0 +1,294 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}V_produit_cmp/index">Index V_produit_cmp</a></li>
+                        <li><a href="{$url_base}V_produit_cmp/add">Ajout V_produit_cmp</a></li>
+                        <li><a href="{$url_base}V_produit_cmp/getID/1">Get id V_produit_cmp 1</a></li>
+                        <li><a href="{$url_base}V_produit_cmp/liste">Liste V_produit_cmp </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}V_produit_cmp/update">
+
+          <div class="form-group">
+
+                        <label class="control-label">idpcmp de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="idpcmp"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['idpcmp']}{else}0{/if}"  id="idpcmp"  placeholder="idpcmp"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idp de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="idp"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['idp']}{else}0{/if}"  id="idp"  placeholder="idp"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabidp de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="tabidp"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['tabidp']}{else} {/if}"  id="tabidp"  placeholder="tabidp"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabqnt de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="tabqnt"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['tabqnt']}{else} {/if}"  id="tabqnt"  placeholder="tabqnt"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabmts de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="tabmts"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['tabmts']}{else} {/if}"  id="tabmts"  placeholder="tabmts"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prv de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="prv"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['prv']}{else}0{/if}"  id="prv"  placeholder="prv"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idc de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="idc"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['idc']}{else}0{/if}"  id="idc"  placeholder="idc"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_cat de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="id_cat"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['id_cat']}{else}0{/if}"  id="id_cat"  placeholder="id_cat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">desi de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="desi"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['desi']}{else} {/if}"  id="desi"  placeholder="desi"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">photo de v_produit_cmp</label>
+
+     <input class="form-control" type="file" name="photo"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['photo']}{else} {/if}"  id="photo"  placeholder="photo"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prixa de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="prixa"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['prixa']}{else}0{/if}"  id="prixa"  placeholder="prixa"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prixv de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="prixv"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['prixv']}{else}0{/if}"  id="prixv"  placeholder="prixv"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">qnt de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="qnt"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['qnt']}{else}0{/if}"  id="qnt"  placeholder="qnt"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">ftech de v_produit_cmp</label>
+
+     <textarea rows="5" name="ftech"  id="ftech" > {if isset($v_produit_cmp)} {$v_produit_cmp['ftech']}{else} {/if} </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">flag de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="flag"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['flag']}{else}0{/if}"  id="flag"  placeholder="flag"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idfa de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="idfa"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['idfa']}{else}0{/if}"  id="idfa"  placeholder="idfa"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_cat de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="nom_cat"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['nom_cat']}{else} {/if}"  id="nom_cat"  placeholder="nom_cat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">achat de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="achat"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['achat']}{else}0{/if}"  id="achat"  placeholder="achat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">vente de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="vente"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['vente']}{else}0{/if}"  id="vente"  placeholder="vente"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">compt de v_produit_cmp</label>
+
+     <input class="form-control" type="number" name="compt"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['compt']}{else}0{/if}"  id="compt"  placeholder="compt"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nomf de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="nomf"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['nomf']}{else} {/if}"  id="nomf"  placeholder="nomf"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">color de v_produit_cmp</label>
+
+     <input class="form-control" type="color" name="color"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['color']}{else} {/if}"  id="color"  placeholder="color"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nomc de v_produit_cmp</label>
+
+     <input class="form-control" type="text" name="nomc"  value="{if isset($v_produit_cmp)} {$v_produit_cmp['nomc']}{else} {/if}"  id="nomc"  placeholder="nomc"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}V_produit_cmp/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

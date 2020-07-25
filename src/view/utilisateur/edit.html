@@ -1,0 +1,257 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Utilisateur/index">Index Utilisateur</a></li>
+                        <li><a href="{$url_base}Utilisateur/add">Ajout Utilisateur</a></li>
+                        <li><a href="{$url_base}Utilisateur/getID/1">Get id Utilisateur 1</a></li>
+                        <li><a href="{$url_base}Utilisateur/liste">Liste Utilisateur </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Utilisateur/update">
+     <input class="form-control" type="hidden" name="idu"  value="{if isset($utilisateur)} {$utilisateur['idu']}{else}0{/if}"  id="idu"  placeholder="idu"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cni de utilisateur</label>
+
+     <input class="form-control" type="text" name="cni"  value="{if isset($utilisateur)} {$utilisateur['cni']}{else} {/if}"  id="cni"  placeholder="cni"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prenom_user de utilisateur</label>
+
+     <input class="form-control" type="text" name="prenom_user"  value="{if isset($utilisateur)} {$utilisateur['prenom_user']}{else} {/if}"  id="prenom_user"  placeholder="prenom_user"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_user de utilisateur</label>
+
+     <input class="form-control" type="text" name="nom_user"  value="{if isset($utilisateur)} {$utilisateur['nom_user']}{else} {/if}"  id="nom_user"  placeholder="nom_user"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">login de utilisateur</label>
+
+     <input class="form-control" type="text" name="login"  value="{if isset($utilisateur)} {$utilisateur['login']}{else} {/if}"  id="login"  placeholder="login"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">sexe_user de utilisateur</label>
+
+     <input class="form-control" type="text" name="sexe_user"  value="{if isset($utilisateur)} {$utilisateur['sexe_user']}{else} {/if}"  id="sexe_user"  placeholder="sexe_user"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">poste de utilisateur</label>
+
+     <input class="form-control" type="text" name="poste"  value="{if isset($utilisateur)} {$utilisateur['poste']}{else} {/if}"  id="poste"  placeholder="poste"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">salaire de utilisateur</label>
+
+     <input class="form-control" type="number" name="salaire"  value="{if isset($utilisateur)} {$utilisateur['salaire']}{else}0{/if}"  id="salaire"  placeholder="salaire"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">statut de utilisateur</label>
+
+     <input class="form-control" type="text" name="statut"  value="{if isset($utilisateur)} {$utilisateur['statut']}{else} {/if}"  id="statut"  placeholder="statut"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">datnais de utilisateur</label>
+
+     <input class="form-control" type="" name="datnais"  value="{if isset($utilisateur)} {$utilisateur['datnais']}{else} {/if}"  id="datnais"  placeholder="datnais"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">datem de utilisateur</label>
+
+     <input class="form-control" type="date" name="datem"  value="{if isset($utilisateur)} {$utilisateur['datem']}{else} {/if}"  id="datem"  placeholder="datem"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">levesecurity de utilisateur</label>
+
+     <input class="form-control" type="number" name="levesecurity"  value="{if isset($utilisateur)} {$utilisateur['levesecurity']}{else}0{/if}"  id="levesecurity"  placeholder="levesecurity"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">passe de utilisateur</label>
+
+     <input class="form-control" type="password" name="passe"  value="{if isset($utilisateur)} {$utilisateur['passe']}{else} {/if}"  id="passe"  placeholder="passe"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">adress de utilisateur</label>
+
+     <input class="form-control" type="text" name="adress"  value="{if isset($utilisateur)} {$utilisateur['adress']}{else} {/if}"  id="adress"  placeholder="adress"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">email de utilisateur</label>
+
+     <input class="form-control" type="email" name="email"  value="{if isset($utilisateur)} {$utilisateur['email']}{else} {/if}"  id="email"  placeholder="email"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">num_uer de utilisateur</label>
+
+     <input class="form-control" type="text" name="num_uer"  value="{if isset($utilisateur)} {$utilisateur['num_uer']}{else} {/if}"  id="num_uer"  placeholder="num_uer"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">photo de utilisateur</label>
+
+     <input class="form-control" type="file" name="photo"  value="{if isset($utilisateur)} {$utilisateur['photo']}{else} {/if}"  id="photo"  placeholder="photo"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">infos de utilisateur</label>
+
+     <textarea rows="5" name="infos"  id="infos" > {if isset($utilisateur)} {$utilisateur['infos']}{else} {/if} </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cacher de utilisateur</label>
+
+     <input class="form-control" type="text" name="cacher"  value="{if isset($utilisateur)} {$utilisateur['cacher']}{else} {/if}"  id="cacher"  placeholder="cacher"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">flag de utilisateur</label>
+
+     <input class="form-control" type="number" name="flag"  value="{if isset($utilisateur)} {$utilisateur['flag']}{else}0{/if}"  id="flag"  placeholder="flag"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Utilisateur/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

@@ -1,0 +1,63 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page get_id</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Service/index">Index Service</a></li>
+                        <li><a href="{$url_base}Service/add">Ajout Service</a></li>
+                        <li><a href="{$url_base}Service/getID/1">Get id Service 1</a></li>
+                        <li><a href="{$url_base}Service/liste">Liste Service </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+						<div class="thumbnail">
+								<div class="caption">
+									<p>
+									<div class="alert alert-success" style="font-size:18px; text-align:justify;">
+                                                  <h1>Valeur de l'identifiant id revoyée par le controller : getID({$id})</h1>
+									</div>
+									</p>
+								</div>
+							</a>
+						</div>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

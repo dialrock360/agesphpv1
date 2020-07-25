@@ -1,0 +1,134 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}V_account_sessions/index">Index V_account_sessions</a></li>
+                        <li><a href="{$url_base}V_account_sessions/add">Ajout V_account_sessions</a></li>
+                        <li><a href="{$url_base}V_account_sessions/getID/1">Get id V_account_sessions 1</a></li>
+                        <li><a href="{$url_base}V_account_sessions/liste">Liste V_account_sessions </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}V_account_sessions/add">
+
+          <div class="form-group">
+
+                        <label class="control-label">session_id de v_account_sessions</label>
+
+     <input class="form-control" type="text" name="session_id"  value=""  id="session_id"  placeholder="session_id"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">account_id de v_account_sessions</label>
+
+     <input class="form-control" type="number" name="account_id"  value="0"  id="account_id"  placeholder="account_id"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">account_token de v_account_sessions</label>
+
+     <input class="form-control" type="text" name="account_token"  value=""  id="account_token"  placeholder="account_token"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">login_time de v_account_sessions</label>
+
+     <input class="form-control" type="time" name="login_time"  value=""  id="login_time"  placeholder="login_time"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">login de v_account_sessions</label>
+
+     <input class="form-control" type="text" name="login"  value=""  id="login"  placeholder="login"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">enabled de v_account_sessions</label>
+
+     <input class="form-control" type="number" name="enabled"  value="0"  id="enabled"  placeholder="enabled"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">levelsecurity de v_account_sessions</label>
+
+     <input class="form-control" type="text" name="levelsecurity"  value=""  id="levelsecurity"  placeholder="levelsecurity"   />
+
+          </div>
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

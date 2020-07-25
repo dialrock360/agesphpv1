@@ -1,0 +1,146 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Accounts/index">Index Accounts</a></li>
+                        <li><a href="{$url_base}Accounts/add">Ajout Accounts</a></li>
+                        <li><a href="{$url_base}Accounts/getID/1">Get id Accounts 1</a></li>
+                        <li><a href="{$url_base}Accounts/liste">Liste Accounts </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Accounts/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($accounts)} {$accounts['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_service de accounts</label>
+
+         <select name="id_service"  class="form-control champ" id="id_service">   
+
+                        <option  value="{if isset($accounts)} {$accounts['id_service']}{else}0{/if}" selected>id_service de accounts</option>
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom de accounts</label>
+
+     <input class="form-control" type="text" name="nom"  value="{if isset($accounts)} {$accounts['nom']}{else} {/if}"  id="nom"  placeholder="nom"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">avatar de accounts</label>
+
+     <input class="form-control" type="text" name="avatar"  value="{if isset($accounts)} {$accounts['avatar']}{else} {/if}"  id="avatar"  placeholder="avatar"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">login de accounts</label>
+
+     <input class="form-control" type="text" name="login"  value="{if isset($accounts)} {$accounts['login']}{else} {/if}"  id="login"  placeholder="login"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">password de accounts</label>
+
+     <input class="form-control" type="password" name="password"  value="{if isset($accounts)} {$accounts['password']}{else} {/if}"  id="password"  placeholder="password"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">enabled de accounts</label>
+
+     <input class="form-control" type="number" name="enabled"  value="{if isset($accounts)} {$accounts['enabled']}{else}0{/if}"  id="enabled"  placeholder="enabled"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">levelsecurity de accounts</label>
+
+     <input class="form-control" type="text" name="levelsecurity"  value="{if isset($accounts)} {$accounts['levelsecurity']}{else} {/if}"  id="levelsecurity"  placeholder="levelsecurity"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Accounts/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Bootstable Plugin Example</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" type="text/css">
+<style>
+.container { margin:150px auto;}
+</style>
+</head>
+
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/table/Editable-Tables-jQuery-Bootstrap-Bootstable/">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div class="container">
+
+<h1>jQuery Bootstable Plugin Example</h1>
+<table class="table table-bordered" id="myTable">
+    <thead>
+      <tr id="1">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="2">
+        <td class="editSpan fname">John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        
+      </tr>
+      <tr id="3">
+        <td class="editSpan fname">Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+        
+      </tr>
+      <tr>
+        <td class="editSpan fname">July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="bootstable.js"></script>
+<script>
+    // code to read selected table row cell data (values).
+    /*$("#myTable").on('click','.btnSelect',function(){
+        // get the current row
+        var currentRow=$(this).closest("tr");
+
+        var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+        var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+        var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+        var data=col1+"\n"+col2+"\n"+col3;
+
+        alert(data);
+    });*/
+
+    $('table').SetEditable({
+
+        onEdit: function() {
+            var trObj = $(this).closest("tr");
+            var ID = $(this).closest("tr").attr('id');
+            alert(ID);
+        },
+        onDelete: function() {
+            alert('caca');
+        },
+        onBeforeDelete: function() {},
+        onAdd: function() {}
+    });
+</script>
+
+</body>
+</html>

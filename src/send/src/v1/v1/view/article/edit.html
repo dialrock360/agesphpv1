@@ -1,0 +1,171 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Article/index">Index Article</a></li>
+                        <li><a href="{$url_base}Article/add">Ajout Article</a></li>
+                        <li><a href="{$url_base}Article/getID/1">Get id Article 1</a></li>
+                        <li><a href="{$url_base}Article/liste">Liste Article </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Article/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($article)} {$article['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_categorie de article</label>
+
+         <select name="id_categorie"  class="form-control champ" id="id_categorie">   
+
+                        <option  value="{if isset($article)} {$article['id_categorie']}{else}0{/if}" selected>id_categorie de article</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($article)} {$article['id_categorie']}{else}0{/if}" selected>id_categorie de article</option>
+         {if isset($categories)}    
+                    {foreach from=$categories item=champ}
+
+                        <option  value={$champ['id']}>categorie id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_catalogue de article</label>
+
+         <select name="id_catalogue"  class="form-control champ" id="id_catalogue">   
+
+                        <option  value="{if isset($article)} {$article['id_catalogue']}{else}0{/if}" selected>id_catalogue de article</option>
+         {if isset($catalogues)}    
+                    {foreach from=$catalogues item=champ}
+
+                        <option  value={$champ['id']}>catalogue id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($article)} {$article['id_catalogue']}{else}0{/if}" selected>id_catalogue de article</option>
+         {if isset($catalogues)}    
+                    {foreach from=$catalogues item=champ}
+
+                        <option  value={$champ['id']}>catalogue id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">type_article de article</label>
+
+     <input class="form-control" type="text" name="type_article"  value="{if isset($article)} {$article['type_article']}{else} {/if}"  id="type_article"  placeholder="type_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">fiche_technique de article</label>
+
+     <textarea rows="5" name="fiche_technique"  id="fiche_technique" > {if isset($article)} {$article['fiche_technique']}{else} {/if} </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbrstockage de article</label>
+
+     <input class="form-control" type="number" name="nbrstockage"  value="{if isset($article)} {$article['nbrstockage']}{else}0{/if}"  id="nbrstockage"  placeholder="nbrstockage"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabidstock de article</label>
+
+     <input class="form-control" type="text" name="tabidstock"  value="{if isset($article)} {$article['tabidstock']}{else} {/if}"  id="tabidstock"  placeholder="tabidstock"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">valeur_article de article</label>
+
+     <input class="form-control" type="number" name="valeur_article"  value="{if isset($article)} {$article['valeur_article']}{else}0{/if}"  id="valeur_article"  placeholder="valeur_article"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_article"  value="{if isset($article)} {$article['flag_article']}{else}0{/if}"  id="flag_article"   placeholder="flag_article"   />
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Article/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

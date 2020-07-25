@@ -1,0 +1,94 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Projet/index">Index Projet</a></li>
+                        <li><a href="{$url_base}Projet/add">Ajout Projet</a></li>
+                        <li><a href="{$url_base}Projet/getID/1">Get id Projet 1</a></li>
+                        <li><a href="{$url_base}Projet/liste">Liste Projet </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+				{if isset($projets)}
+					{if $projets != null}
+						<table class="table table-bordered table-stripped">
+			                <caption  > LISTE DE Projet</caption>
+							<tr>
+								<th>Id_programme</th>
+								<th>Id_type_projet</th>
+								<th>Id_equipe</th>
+								<th>Nom_projet</th>
+								<th>Cout_projet</th>
+								<th>Valeur_projet</th>
+								<th>Date_projet</th>
+								<th>Datefin_projet</th>
+								<th>Color_projet</th>
+								<th>Etat_projet</th>
+								<th>Flag_projet</th>
+								<th>Action</th>
+								<th>Action</th>
+							</tr>
+							{foreach from=$projets item=obj}
+								<tr>
+								<td>{$obj["id_programme"]}</td>
+								<td>{$obj["id_type_projet"]}</td>
+								<td>{$obj["id_equipe"]}</td>
+								<td>{$obj["nom_projet"]}</td>
+								<td>{$obj["cout_projet"]}</td>
+								<td>{$obj["valeur_projet"]}</td>
+								<td>{$obj["date_projet"]}</td>
+								<td>{$obj["datefin_projet"]}</td>
+								<td>{$obj["color_projet"]}</td>
+								<td>{$obj["etat_projet"]}</td>
+								<td>{$obj["flag_projet"]}</td>
+									<td><a href="{$url_base}Projet/delete/id/{$obj["id"]}">Supprimer</a></td>
+									<td><a href="{$url_base}Projet/edit/id/{$obj["id"]}"]}">Editer</a></td>
+								</tr>
+							{/foreach}
+						</table>
+					{else}
+						Liste vide
+					{/if}
+				{/if}
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

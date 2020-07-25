@@ -1,0 +1,101 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Programme/index">Index Programme</a></li>
+                        <li><a href="{$url_base}Programme/add">Ajout Programme</a></li>
+                        <li><a href="{$url_base}Programme/getID/1">Get id Programme 1</a></li>
+                        <li><a href="{$url_base}Programme/liste">Liste Programme </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+               								{if isset($ok)}
+               								{if $ok != 0}
+                    								<div class="alert alert-success">Données ajoutées!</div>
+               								{else}
+                    								<div class="alert alert-danger">Erreur!</div>
+               								{/if}
+               								{/if}
+                                      <form method="post" action="{$url_base}Programme/update">
+                                                  <input class="form-control" type="hidden" name="id" value="{if isset($programme)} {$programme['id']} {/if}" id="id"/>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Services </label>
+                                       <select name="id_service" class="form-control champ" >                                                <option selected value="{$programme['id_service']}">{if isset($programme)} {$programme['id_service']}   {/if}</option>
+                                                {foreach from=$services item=champ}
+                                                <option value="{$champ['id']}">{$champ['nom_service']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">nom_programme de Programme</label>
+                                                <input class="form-control" type="text" name="nom_programme" value="{if isset($programme)} {$programme['nom_programme']} {/if}" id="nom_programme"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">date_programme de Programme</label>
+                                                <input class="form-control" type="date" name="date_programme" value="{if isset($programme)} {$programme['date_programme']} {/if}"  id="date_programme"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">datefin_programme de Programme</label>
+                                                <input class="form-control" type="date" name="datefin_programme" value="{if isset($programme)} {$programme['datefin_programme']} {/if}"  id="datefin_programme"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">nbr_projet_programme de Programme</label>
+                                                <input class="form-control" type="text" name="nbr_projet_programme" value="{if isset($programme)} {$programme['nbr_projet_programme']} {/if}" id="nbr_projet_programme"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">etat_programme de Programme</label>
+                                                <input class="form-control" type="number" name="etat_programme" value="{if isset($programme)} {$programme['etat_programme']} {/if}"  id="etat_programme"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">flag_programme de Programme</label>
+                                                <input class="form-control" type="number" name="flag_programme" value="{if isset($programme)} {$programme['flag_programme']} {/if}"  id="flag_programme"/>
+                                       </div>
+
+
+                                              <div class="form-group">
+                                                         <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                                                         <a class="btn btn-info" href="{$url_base}Programme/liste">Retour</a>
+                                                     </div>
+                                      </form>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

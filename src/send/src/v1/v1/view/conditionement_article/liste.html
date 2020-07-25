@@ -1,0 +1,95 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Conditionement_article/index">Index Conditionement_article</a></li>
+                        <li><a href="{$url_base}Conditionement_article/add">Ajout Conditionement_article</a></li>
+                        <li><a href="{$url_base}Conditionement_article/getID/1">Get id Conditionement_article 1</a></li>
+                        <li><a href="{$url_base}Conditionement_article/liste">Liste Conditionement_article </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($conditionement_articles) && $conditionement_articles != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Conditionement_article</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Id_article_en_stock</th>
+                                 <th>Id_conditionement</th>
+                                 <th>Id_unite</th>
+                                 <th>Qnt_unite</th>
+                                 <th>Pxa_u_article_en_stock</th>
+                                 <th>Cout_achat_conditionement_article</th>
+                                 <th>Pxv_u_conditionement_article</th>
+                                 <th>Pxv_bar_conditionement_article</th>
+                                 <th>Pxv_conditionement_article</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$conditionement_articles item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["id_article_en_stock"]}</td>
+                                 <td>{$obj["id_conditionement"]}</td>
+                                 <td>{$obj["id_unite"]}</td>
+                                 <td>{$obj["qnt_unite"]}</td>
+                                 <td>{$obj["pxa_u_article_en_stock"]}</td>
+                                 <td>{$obj["cout_achat_conditionement_article"]}</td>
+                                 <td>{$obj["pxv_u_conditionement_article"]}</td>
+                                 <td>{$obj["pxv_bar_conditionement_article"]}</td>
+                                 <td>{$obj["pxv_conditionement_article"]}</td>
+                                    <td><a href="{$url_base}Conditionement_article/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Conditionement_article/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

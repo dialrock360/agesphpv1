@@ -1,0 +1,354 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}V_facture/index">Index V_facture</a></li>
+                        <li><a href="{$url_base}V_facture/add">Ajout V_facture</a></li>
+                        <li><a href="{$url_base}V_facture/getID/1">Get id V_facture 1</a></li>
+                        <li><a href="{$url_base}V_facture/liste">Liste V_facture </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}V_facture/add">
+
+          <div class="form-group">
+
+                        <label class="control-label">idf de v_facture</label>
+
+     <input class="form-control" type="number" name="idf"  value="0"  id="idf"  placeholder="idf"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idmv de v_facture</label>
+
+     <input class="form-control" type="number" name="idmv"  value="0"  id="idmv"  placeholder="idmv"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idp de v_facture</label>
+
+     <input class="form-control" type="number" name="idp"  value="0"  id="idp"  placeholder="idp"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">pu de v_facture</label>
+
+     <input class="form-control" type="number" name="pu"  value="0"  id="pu"  placeholder="pu"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">qnt de v_facture</label>
+
+     <input class="form-control" type="number" name="qnt"  value="0"  id="qnt"  placeholder="qnt"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">mts de v_facture</label>
+
+     <input class="form-control" type="number" name="mts"  value="0"  id="mts"  placeholder="mts"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">row de v_facture</label>
+
+     <input class="form-control" type="number" name="row"  value="0"  id="row"  placeholder="row"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">fdesi de v_facture</label>
+
+     <input class="form-control" type="text" name="fdesi"  value=""  id="fdesi"  placeholder="fdesi"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">fcondis de v_facture</label>
+
+     <input class="form-control" type="text" name="fcondis"  value=""  id="fcondis"  placeholder="fcondis"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nommv de v_facture</label>
+
+     <input class="form-control" type="text" name="nommv"  value=""  id="nommv"  placeholder="nommv"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_del de v_facture</label>
+
+     <input class="form-control" type="date" name="date_del"  value=""  id="date_del"  placeholder="date_del"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idc de v_facture</label>
+
+     <input class="form-control" type="number" name="idc"  value="0"  id="idc"  placeholder="idc"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_cat de v_facture</label>
+
+     <input class="form-control" type="number" name="id_cat"  value="0"  id="id_cat"  placeholder="id_cat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">desi de v_facture</label>
+
+     <input class="form-control" type="text" name="desi"  value=""  id="desi"  placeholder="desi"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">photo de v_facture</label>
+
+     <input class="form-control" type="file" name="photo"  value=""  id="photo"  placeholder="photo"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prixa de v_facture</label>
+
+     <input class="form-control" type="number" name="prixa"  value="0"  id="prixa"  placeholder="prixa"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prixv de v_facture</label>
+
+     <input class="form-control" type="number" name="prixv"  value="0"  id="prixv"  placeholder="prixv"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">qntstk de v_facture</label>
+
+     <input class="form-control" type="number" name="qntstk"  value="0"  id="qntstk"  placeholder="qntstk"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">composer de v_facture</label>
+
+     <input class="form-control" type="number" name="composer"  value="0"  id="composer"  placeholder="composer"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">ftech de v_facture</label>
+
+     <textarea rows="5" name="ftech"  id="ftech" >  </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">flag de v_facture</label>
+
+     <input class="form-control" type="number" name="flag"  value="0"  id="flag"  placeholder="flag"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">idfa de v_facture</label>
+
+     <input class="form-control" type="number" name="idfa"  value="0"  id="idfa"  placeholder="idfa"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_cat de v_facture</label>
+
+     <input class="form-control" type="text" name="nom_cat"  value=""  id="nom_cat"  placeholder="nom_cat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">achat de v_facture</label>
+
+     <input class="form-control" type="number" name="achat"  value="0"  id="achat"  placeholder="achat"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">vente de v_facture</label>
+
+     <input class="form-control" type="number" name="vente"  value="0"  id="vente"  placeholder="vente"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">compt de v_facture</label>
+
+     <input class="form-control" type="number" name="compt"  value="0"  id="compt"  placeholder="compt"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nomf de v_facture</label>
+
+     <input class="form-control" type="text" name="nomf"  value=""  id="nomf"  placeholder="nomf"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">color de v_facture</label>
+
+     <input class="form-control" type="color" name="color"  value=""  id="color"  placeholder="color"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nomc de v_facture</label>
+
+     <input class="form-control" type="text" name="nomc"  value=""  id="nomc"  placeholder="nomc"   />
+
+          </div>
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

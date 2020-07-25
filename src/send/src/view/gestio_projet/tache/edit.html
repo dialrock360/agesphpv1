@@ -1,0 +1,105 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Tache/index">Index Tache</a></li>
+                        <li><a href="{$url_base}Tache/add">Ajout Tache</a></li>
+                        <li><a href="{$url_base}Tache/getID/1">Get id Tache 1</a></li>
+                        <li><a href="{$url_base}Tache/liste">Liste Tache </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+               								{if isset($ok)}
+               								{if $ok != 0}
+                    								<div class="alert alert-success">Données ajoutées!</div>
+               								{else}
+                    								<div class="alert alert-danger">Erreur!</div>
+               								{/if}
+               								{/if}
+                                      <form method="post" action="{$url_base}Tache/update">
+                                                  <input class="form-control" type="hidden" name="id" value="{if isset($tache)} {$tache['id']} {/if}" id="id"/>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Projets </label>
+                                       <select name="id_projet" class="form-control champ" >                                                <option selected value="{$tache['id_projet']}">{if isset($tache)} {$tache['id_projet']}   {/if}</option>
+                                                {foreach from=$projets item=champ}
+                                                <option value="{$champ['id']}">{$champ['id_programme']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">nom_tache de Tache</label>
+                                                <input class="form-control" type="text" name="nom_tache" value="{if isset($tache)} {$tache['nom_tache']} {/if}" id="nom_tache"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">ls_membre_tache de Tache</label>
+                                                <input class="form-control" type="text" name="ls_membre_tache" value="{if isset($tache)} {$tache['ls_membre_tache']} {/if}" id="ls_membre_tache"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">date_tache de Tache</label>
+                                                <input class="form-control" type="date" name="date_tache" value="{if isset($tache)} {$tache['date_tache']} {/if}"  id="date_tache"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">datelimit_tache de Tache</label>
+                                                <input class="form-control" type="date" name="datelimit_tache" value="{if isset($tache)} {$tache['datelimit_tache']} {/if}"  id="datelimit_tache"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">etiquette_tache de Tache</label>
+                                                <input class="form-control" type="text" name="etiquette_tache" value="{if isset($tache)} {$tache['etiquette_tache']} {/if}" id="etiquette_tache"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">etat_tache de Tache</label>
+                                                <input class="form-control" type="number" name="etat_tache" value="{if isset($tache)} {$tache['etat_tache']} {/if}"  id="etat_tache"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">info_tache de Tache</label>
+                                                <input class="form-control" type="text" name="info_tache" value="{if isset($tache)} {$tache['info_tache']} {/if}" id="info_tache"/>
+                                       </div>
+
+
+                                              <div class="form-group">
+                                                         <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                                                         <a class="btn btn-info" href="{$url_base}Tache/liste">Retour</a>
+                                                     </div>
+                                      </form>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

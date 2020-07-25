@@ -1,0 +1,98 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Employee/index">Index Employee</a></li>
+                        <li><a href="{$url_base}Employee/add">Ajout Employee</a></li>
+                        <li><a href="{$url_base}Employee/getID/1">Get id Employee 1</a></li>
+                        <li><a href="{$url_base}Employee/liste">Liste Employee </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+				{if isset($employees)}
+					{if $employees != null}
+						<table class="table table-bordered table-stripped">
+			                <caption  > LISTE DE Employee</caption>
+							<tr>
+								<th>Id_departement</th>
+								<th>Id_categorie_pro</th>
+								<th>Id_ruperieur_hierarchique</th>
+								<th>Avatar_employe</th>
+								<th>Matricul_employee</th>
+								<th>Cv_employee</th>
+								<th>Salaire_employee</th>
+								<th>Nom_employee</th>
+								<th>Nature_employee</th>
+								<th>Tel_employee</th>
+								<th>Email_employee</th>
+								<th>Info_employee</th>
+								<th>Flag_employee</th>
+								<th>Action</th>
+								<th>Action</th>
+							</tr>
+							{foreach from=$employees item=obj}
+								<tr>
+								<td>{$obj["id_departement"]}</td>
+								<td>{$obj["id_categorie_pro"]}</td>
+								<td>{$obj["id_ruperieur_hierarchique"]}</td>
+								<td>{$obj["avatar_employe"]}</td>
+								<td>{$obj["matricul_employee"]}</td>
+								<td>{$obj["cv_employee"]}</td>
+								<td>{$obj["salaire_employee"]}</td>
+								<td>{$obj["nom_employee"]}</td>
+								<td>{$obj["nature_employee"]}</td>
+								<td>{$obj["tel_employee"]}</td>
+								<td>{$obj["email_employee"]}</td>
+								<td>{$obj["info_employee"]}</td>
+								<td>{$obj["flag_employee"]}</td>
+									<td><a href="{$url_base}Employee/delete/id/{$obj["id"]}">Supprimer</a></td>
+									<td><a href="{$url_base}Employee/edit/id/{$obj["id"]}"]}">Editer</a></td>
+								</tr>
+							{/foreach}
+						</table>
+					{else}
+						Liste vide
+					{/if}
+				{/if}
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

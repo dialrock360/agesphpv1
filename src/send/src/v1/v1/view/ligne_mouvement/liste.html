@@ -1,0 +1,93 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Ligne_mouvement/index">Index Ligne_mouvement</a></li>
+                        <li><a href="{$url_base}Ligne_mouvement/add">Ajout Ligne_mouvement</a></li>
+                        <li><a href="{$url_base}Ligne_mouvement/getID/1">Get id Ligne_mouvement 1</a></li>
+                        <li><a href="{$url_base}Ligne_mouvement/liste">Liste Ligne_mouvement </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($ligne_mouvements) && $ligne_mouvements != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Ligne_mouvement</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Id_mouvement</th>
+                                 <th>Id_article</th>
+                                 <th>Pu_ligne_mouvement</th>
+                                 <th>Qnt_ligne_mouvement</th>
+                                 <th>Mts_ligne_mouvement</th>
+                                 <th>Position_ligne_mouvement</th>
+                                 <th>Designation_ligne_mouvement</th>
+                                 <th>Conditionement_ligne_mouvement</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$ligne_mouvements item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["id_mouvement"]}</td>
+                                 <td>{$obj["id_article"]}</td>
+                                 <td>{$obj["pu_ligne_mouvement"]}</td>
+                                 <td>{$obj["qnt_ligne_mouvement"]}</td>
+                                 <td>{$obj["mts_ligne_mouvement"]}</td>
+                                 <td>{$obj["position_ligne_mouvement"]}</td>
+                                 <td>{$obj["designation_ligne_mouvement"]}</td>
+                                 <td>{$obj["conditionement_ligne_mouvement"]}</td>
+                                    <td><a href="{$url_base}Ligne_mouvement/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Ligne_mouvement/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

@@ -1,0 +1,166 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Salarier/index">Index Salarier</a></li>
+                        <li><a href="{$url_base}Salarier/add">Ajout Salarier</a></li>
+                        <li><a href="{$url_base}Salarier/getID/1">Get id Salarier 1</a></li>
+                        <li><a href="{$url_base}Salarier/liste">Liste Salarier </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Salarier/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($salarier)} {$salarier['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">contrat_id de salarier</label>
+
+         <select name="contrat_id"  class="form-control champ" id="contrat_id">   
+
+                        <option  value="{if isset($salarier)} {$salarier['contrat_id']}{else}0{/if}" selected>contrat_id de salarier</option>
+         {if isset($contrats)}    
+                    {foreach from=$contrats item=champ}
+
+                        <option  value={$champ['id']}>contrat id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">type_salaire de salarier</label>
+
+     <input class="form-control" type="text" name="type_salaire"  value="{if isset($salarier)} {$salarier['type_salaire']}{else} {/if}"  id="type_salaire"  placeholder="type_salaire"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">salaire_base de salarier</label>
+
+     <input class="form-control" type="number" name="salaire_base"  value="{if isset($salarier)} {$salarier['salaire_base']}{else}0{/if}"  id="salaire_base"  placeholder="salaire_base"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nature_salaire_base de salarier</label>
+
+     <input class="form-control" type="text" name="nature_salaire_base"  value="{if isset($salarier)} {$salarier['nature_salaire_base']}{else} {/if}"  id="nature_salaire_base"  placeholder="nature_salaire_base"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">temps_travail de salarier</label>
+
+     <input class="form-control" type="text" name="temps_travail"  value="{if isset($salarier)} {$salarier['temps_travail']}{else} {/if}"  id="temps_travail"  placeholder="temps_travail"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbr_heur_travail de salarier</label>
+
+     <input class="form-control" type="number" name="nbr_heur_travail"  value="{if isset($salarier)} {$salarier['nbr_heur_travail']}{else}0{/if}"  id="nbr_heur_travail"  placeholder="nbr_heur_travail"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">freq_travail de salarier</label>
+
+     <input class="form-control" type="text" name="freq_travail"  value="{if isset($salarier)} {$salarier['freq_travail']}{else} {/if}"  id="freq_travail"  placeholder="freq_travail"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prix_heur_sup de salarier</label>
+
+     <input class="form-control" type="number" name="prix_heur_sup"  value="{if isset($salarier)} {$salarier['prix_heur_sup']}{else}0{/if}"  id="prix_heur_sup"  placeholder="prix_heur_sup"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">poste_id de salarier</label>
+
+     <input class="form-control" type="text" name="poste_id"  value="{if isset($salarier)} {$salarier['poste_id']}{else} {/if}"  id="poste_id"  placeholder="poste_id"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Salarier/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

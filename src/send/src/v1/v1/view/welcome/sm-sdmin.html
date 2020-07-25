@@ -1,0 +1,136 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>Vue Welcome</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}Account_sessions/index">Page Account_sessions</a></li>
+                        <li><a href="{$url_base}Accounts/index">Page Accounts</a></li>
+                        <li><a href="{$url_base}Article/index">Page Article</a></li>
+                        <li><a href="{$url_base}Article_en_stock/index">Page Article_en_stock</a></li>
+                        <li><a href="{$url_base}Caisse/index">Page Caisse</a></li>
+                        <li><a href="{$url_base}Catalogue/index">Page Catalogue</a></li>
+                        <li><a href="{$url_base}Categorie/index">Page Categorie</a></li>
+                        <li><a href="{$url_base}Conditionement/index">Page Conditionement</a></li>
+                        <li><a href="{$url_base}Conditionement_article/index">Page Conditionement_article</a></li>
+                        <li><a href="{$url_base}Conger/index">Page Conger</a></li>
+                        <li><a href="{$url_base}Connexion_filter/index">Page Connexion_filter</a></li>
+                        <li><a href="{$url_base}Contrat/index">Page Contrat</a></li>
+                        <li><a href="{$url_base}Cordonnees/index">Page Cordonnees</a></li>
+                        <li><a href="{$url_base}Departement/index">Page Departement</a></li>
+                        <li><a href="{$url_base}Domaine_programme/index">Page Domaine_programme</a></li>
+                        <li><a href="{$url_base}Equipe/index">Page Equipe</a></li>
+                        <li><a href="{$url_base}Equipe_dequipe/index">Page Equipe_dequipe</a></li>
+                        <li><a href="{$url_base}Equipe_projet/index">Page Equipe_projet</a></li>
+                        <li><a href="{$url_base}Etat_compte/index">Page Etat_compte</a></li>
+                        <li><a href="{$url_base}Famille/index">Page Famille</a></li>
+                        <li><a href="{$url_base}Fiche_de_jours_ferier/index">Page Fiche_de_jours_ferier</a></li>
+                        <li><a href="{$url_base}Fiche_de_presense/index">Page Fiche_de_presense</a></li>
+                        <li><a href="{$url_base}Fiche_paie/index">Page Fiche_paie</a></li>
+                        <li><a href="{$url_base}Fiche_production/index">Page Fiche_production</a></li>
+                        <li><a href="{$url_base}Flux_stock/index">Page Flux_stock</a></li>
+                        <li><a href="{$url_base}Frontend/index">Page Frontend</a></li>
+                        <li><a href="{$url_base}Jour_ferier/index">Page Jour_ferier</a></li>
+                        <li><a href="{$url_base}Ligne_mouvement/index">Page Ligne_mouvement</a></li>
+                        <li><a href="{$url_base}Ligne_producion/index">Page Ligne_producion</a></li>
+                        <li><a href="{$url_base}Ligne_produit_compose/index">Page Ligne_produit_compose</a></li>
+                        <li><a href="{$url_base}Membre_equipe/index">Page Membre_equipe</a></li>
+                        <li><a href="{$url_base}Messages/index">Page Messages</a></li>
+                        <li><a href="{$url_base}Modalite_contrat/index">Page Modalite_contrat</a></li>
+                        <li><a href="{$url_base}Modepaie/index">Page Modepaie</a></li>
+                        <li><a href="{$url_base}Module/index">Page Module</a></li>
+                        <li><a href="{$url_base}Mouvement/index">Page Mouvement</a></li>
+                        <li><a href="{$url_base}Nomenclature_article/index">Page Nomenclature_article</a></li>
+                        <li><a href="{$url_base}Payement/index">Page Payement</a></li>
+                        <li><a href="{$url_base}Personne/index">Page Personne</a></li>
+                        <li><a href="{$url_base}Personne_presente/index">Page Personne_presente</a></li>
+                        <li><a href="{$url_base}Personne_status/index">Page Personne_status</a></li>
+                        <li><a href="{$url_base}Photo_article/index">Page Photo_article</a></li>
+                        <li><a href="{$url_base}Piece_jointe/index">Page Piece_jointe</a></li>
+                        <li><a href="{$url_base}Poste/index">Page Poste</a></li>
+                        <li><a href="{$url_base}Produit/index">Page Produit</a></li>
+                        <li><a href="{$url_base}Programme/index">Page Programme</a></li>
+                        <li><a href="{$url_base}Projet/index">Page Projet</a></li>
+                        <li><a href="{$url_base}Roles/index">Page Roles</a></li>
+                        <li><a href="{$url_base}Rubrique/index">Page Rubrique</a></li>
+                        <li><a href="{$url_base}Salarier/index">Page Salarier</a></li>
+                        <li><a href="{$url_base}Service/index">Page Service</a></li>
+                        <li><a href="{$url_base}Sous_rubrique/index">Page Sous_rubrique</a></li>
+                        <li><a href="{$url_base}Status/index">Page Status</a></li>
+                        <li><a href="{$url_base}Stock/index">Page Stock</a></li>
+                        <li><a href="{$url_base}Tache/index">Page Tache</a></li>
+                        <li><a href="{$url_base}Test/index">Page Test</a></li>
+                        <li><a href="{$url_base}Type_conger/index">Page Type_conger</a></li>
+                        <li><a href="{$url_base}Type_contrat/index">Page Type_contrat</a></li>
+                        <li><a href="{$url_base}Type_mouvement/index">Page Type_mouvement</a></li>
+                        <li><a href="{$url_base}Users_roles/index">Page Users_roles</a></li>
+                        <li><a href="{$url_base}V_account_sessions/index">Page V_account_sessions</a></li>
+                        <li><a href="{$url_base}V_article/index">Page V_article</a></li>
+                        <li><a href="{$url_base}V_article_en_stock/index">Page V_article_en_stock</a></li>
+                        <li><a href="{$url_base}V_categorie/index">Page V_categorie</a></li>
+                        <li><a href="{$url_base}V_conditionement_article/index">Page V_conditionement_article</a></li>
+                        <li><a href="{$url_base}V_famille/index">Page V_famille</a></li>
+                        <li><a href="{$url_base}V_personne/index">Page V_personne</a></li>
+                        <li>  <a href="{$url_base}"> <img src="{$url_base}public/image/sitelogo.png" height="32" width="32" class="img-circle " /></i>Mon Site Web</a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+						<div class="thumbnail">
+                <img src="{$url_base}public/image/logo.jpg" alt="Lights" style="width:50%" />
+								<div class="caption">
+									<p>
+									<div class="alert alert-success" style="font-size:18px; text-align:justify;">
+										Merci, l'équipe samanemvc vous remercie :) :
+										je vous ai préparé un CRUD qui marche, il suffit tout simplement d'importer
+										la base de données qui se trouve dans le dossier src/view puis test (src/view/test);
+										cette base s'appelle samane_test.sql et elle comporte une seule table nommée test.
+										ça vous sera très utile j'espère.
+										<br/>Et surtout noubliez pas de configurer votre base de données : ou? Dans le dossier config
+										puis éditez le fichier database.php. Mettez à on l'etat de la base! Bon code!!!!  :)
+									</div>
+									MODELE DEVELOPPE PAR Ngor SECK !
+									<br/>
+									<h1>IT WORKS !!!! </h1>
+									</p>
+								</div>
+							</a>
+						</div>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

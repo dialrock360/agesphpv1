@@ -1,0 +1,303 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}V_article/index">Index V_article</a></li>
+                        <li><a href="{$url_base}V_article/add">Ajout V_article</a></li>
+                        <li><a href="{$url_base}V_article/getID/1">Get id V_article 1</a></li>
+                        <li><a href="{$url_base}V_article/liste">Liste V_article </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}V_article/update">
+
+          <div class="form-group">
+
+                        <label class="control-label">id de v_article</label>
+
+     <input class="form-control" type="number" name="id"  value="{if isset($v_article)} {$v_article['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_categorie de v_article</label>
+
+     <input class="form-control" type="number" name="id_categorie"  value="{if isset($v_article)} {$v_article['id_categorie']}{else}0{/if}"  id="id_categorie"  placeholder="id_categorie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_catalogue de v_article</label>
+
+     <input class="form-control" type="number" name="id_catalogue"  value="{if isset($v_article)} {$v_article['id_catalogue']}{else}0{/if}"  id="id_catalogue"  placeholder="id_catalogue"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">fiche_technique de v_article</label>
+
+     <textarea rows="5" name="fiche_technique"  id="fiche_technique" > {if isset($v_article)} {$v_article['fiche_technique']}{else} {/if} </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbrstockage de v_article</label>
+
+     <input class="form-control" type="number" name="nbrstockage"  value="{if isset($v_article)} {$v_article['nbrstockage']}{else}0{/if}"  id="nbrstockage"  placeholder="nbrstockage"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabidstock de v_article</label>
+
+     <input class="form-control" type="text" name="tabidstock"  value="{if isset($v_article)} {$v_article['tabidstock']}{else} {/if}"  id="tabidstock"  placeholder="tabidstock"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">valeur_article de v_article</label>
+
+     <input class="form-control" type="number" name="valeur_article"  value="{if isset($v_article)} {$v_article['valeur_article']}{else}0{/if}"  id="valeur_article"  placeholder="valeur_article"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_article"  value="{if isset($v_article)} {$v_article['flag_article']}{else}0{/if}"  id="flag_article"   placeholder="flag_article"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">ref_article de v_article</label>
+
+     <input class="form-control" type="text" name="ref_article"  value="{if isset($v_article)} {$v_article['ref_article']}{else} {/if}"  id="ref_article"  placeholder="ref_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">type_article de v_article</label>
+
+     <input class="form-control" type="text" name="type_article"  value="{if isset($v_article)} {$v_article['type_article']}{else} {/if}"  id="type_article"  placeholder="type_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_article de v_article</label>
+
+     <input class="form-control" type="text" name="nom_article"  value="{if isset($v_article)} {$v_article['nom_article']}{else} {/if}"  id="nom_article"  placeholder="nom_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_famille de v_article</label>
+
+     <input class="form-control" type="number" name="id_famille"  value="{if isset($v_article)} {$v_article['id_famille']}{else}0{/if}"  id="id_famille"  placeholder="id_famille"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_categorie de v_article</label>
+
+     <input class="form-control" type="text" name="nom_categorie"  value="{if isset($v_article)} {$v_article['nom_categorie']}{else} {/if}"  id="nom_categorie"  placeholder="nom_categorie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbr_produit_categorie de v_article</label>
+
+     <input class="form-control" type="number" name="nbr_produit_categorie"  value="{if isset($v_article)} {$v_article['nbr_produit_categorie']}{else}0{/if}"  id="nbr_produit_categorie"  placeholder="nbr_produit_categorie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">valeur_categorie de v_article</label>
+
+     <input class="form-control" type="number" name="valeur_categorie"  value="{if isset($v_article)} {$v_article['valeur_categorie']}{else}0{/if}"  id="valeur_categorie"  placeholder="valeur_categorie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_nomenclature_article de v_article</label>
+
+     <input class="form-control" type="number" name="id_nomenclature_article"  value="{if isset($v_article)} {$v_article['id_nomenclature_article']}{else}0{/if}"  id="id_nomenclature_article"  placeholder="id_nomenclature_article"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_categorie"  value="{if isset($v_article)} {$v_article['flag_categorie']}{else}0{/if}"  id="flag_categorie"   placeholder="flag_categorie"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_service de v_article</label>
+
+     <input class="form-control" type="number" name="id_service"  value="{if isset($v_article)} {$v_article['id_service']}{else}0{/if}"  id="id_service"  placeholder="id_service"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_famille de v_article</label>
+
+     <input class="form-control" type="text" name="nom_famille"  value="{if isset($v_article)} {$v_article['nom_famille']}{else} {/if}"  id="nom_famille"  placeholder="nom_famille"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">color_famille de v_article</label>
+
+     <input class="form-control" type="color" name="color_famille"  value="{if isset($v_article)} {$v_article['color_famille']}{else} {/if}"  id="color_famille"  placeholder="color_famille"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nbr_categorie_famille de v_article</label>
+
+     <input class="form-control" type="number" name="nbr_categorie_famille"  value="{if isset($v_article)} {$v_article['nbr_categorie_famille']}{else}0{/if}"  id="nbr_categorie_famille"  placeholder="nbr_categorie_famille"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">valeur_famille de v_article</label>
+
+     <input class="form-control" type="number" name="valeur_famille"  value="{if isset($v_article)} {$v_article['valeur_famille']}{else}0{/if}"  id="valeur_famille"  placeholder="valeur_famille"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_famille"  value="{if isset($v_article)} {$v_article['flag_famille']}{else}0{/if}"  id="flag_famille"   placeholder="flag_famille"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_service de v_article</label>
+
+     <input class="form-control" type="text" name="nom_service"  value="{if isset($v_article)} {$v_article['nom_service']}{else} {/if}"  id="nom_service"  placeholder="nom_service"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">path_photo de v_article</label>
+
+     <input class="form-control" type="file" name="path_photo"  value="{if isset($v_article)} {$v_article['path_photo']}{else} {/if}"  id="path_photo"  placeholder="path_photo"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">master de v_article</label>
+
+     <input class="form-control" type="number" name="master"  value="{if isset($v_article)} {$v_article['master']}{else}0{/if}"  id="master"  placeholder="master"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}V_article/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

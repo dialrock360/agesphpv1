@@ -1,0 +1,175 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Conger/index">Index Conger</a></li>
+                        <li><a href="{$url_base}Conger/add">Ajout Conger</a></li>
+                        <li><a href="{$url_base}Conger/getID/1">Get id Conger 1</a></li>
+                        <li><a href="{$url_base}Conger/liste">Liste Conger </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Conger/update">
+
+          <div class="form-group">
+
+                        <label class="control-label">salarier_id de conger</label>
+
+         <select name="salarier_id"  class="form-control champ" id="salarier_id">   
+
+                        <option  value="{if isset($conger)} {$conger['salarier_id']}{else}0{/if}" selected>salarier_id de conger</option>
+         {if isset($salariers)}    
+                    {foreach from=$salariers item=champ}
+
+                        <option  value={$champ['id']}>salarier id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($conger)} {$conger['salarier_id']}{else}0{/if}" selected>salarier_id de conger</option>
+         {if isset($salariers)}    
+                    {foreach from=$salariers item=champ}
+
+                        <option  value={$champ['id']}>salarier id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">type_conger_id de conger</label>
+
+         <select name="type_conger_id"  class="form-control champ" id="type_conger_id">   
+
+                        <option  value="{if isset($conger)} {$conger['type_conger_id']}{else}0{/if}" selected>type_conger_id de conger</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($conger)} {$conger['type_conger_id']}{else}0{/if}" selected>type_conger_id de conger</option>
+         {if isset($type_congers)}    
+                    {foreach from=$type_congers item=champ}
+
+                        <option  value={$champ['id']}>type_conger id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id de conger</label>
+
+     <input class="form-control" type="number" name="id"  value="{if isset($conger)} {$conger['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_debut de conger</label>
+
+     <input class="form-control" type="date" name="date_debut"  value="{if isset($conger)} {$conger['date_debut']}{else} {/if}"  id="date_debut"  placeholder="date_debut"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_fin de conger</label>
+
+     <input class="form-control" type="date" name="date_fin"  value="{if isset($conger)} {$conger['date_fin']}{else} {/if}"  id="date_fin"  placeholder="date_fin"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">status_conger de conger</label>
+
+     <input class="form-control" type="number" name="status_conger"  value="{if isset($conger)} {$conger['status_conger']}{else}0{/if}"  id="status_conger"  placeholder="status_conger"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">justificatif de conger</label>
+
+     <textarea rows="5" name="justificatif"  id="justificatif" > {if isset($conger)} {$conger['justificatif']}{else} {/if} </textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">conger_payer de conger</label>
+
+     <input class="form-control" type="number" name="conger_payer"  value="{if isset($conger)} {$conger['conger_payer']}{else}0{/if}"  id="conger_payer"  placeholder="conger_payer"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Conger/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

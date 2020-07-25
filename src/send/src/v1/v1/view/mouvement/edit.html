@@ -1,0 +1,314 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Mouvement/index">Index Mouvement</a></li>
+                        <li><a href="{$url_base}Mouvement/add">Ajout Mouvement</a></li>
+                        <li><a href="{$url_base}Mouvement/getID/1">Get id Mouvement 1</a></li>
+                        <li><a href="{$url_base}Mouvement/liste">Liste Mouvement </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Mouvement/update">
+     <input class="form-control" type="hidden" name="id"  value="{if isset($mouvement)} {$mouvement['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_service de mouvement</label>
+
+         <select name="id_service"  class="form-control champ" id="id_service">   
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_service']}{else}0{/if}" selected>id_service de mouvement</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_service']}{else}0{/if}" selected>id_service de mouvement</option>
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_service']}{else}0{/if}" selected>id_service de mouvement</option>
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_service']}{else}0{/if}" selected>id_service de mouvement</option>
+         {if isset($services)}    
+                    {foreach from=$services item=champ}
+
+                        <option  value={$champ['id']}>service id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_type_mouvement de mouvement</label>
+
+         <select name="id_type_mouvement"  class="form-control champ" id="id_type_mouvement">   
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_type_mouvement']}{else}0{/if}" selected>id_type_mouvement de mouvement</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_type_mouvement']}{else}0{/if}" selected>id_type_mouvement de mouvement</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_type_mouvement']}{else}0{/if}" selected>id_type_mouvement de mouvement</option>
+         {if isset($type_mouvements)}    
+                    {foreach from=$type_mouvements item=champ}
+
+                        <option  value={$champ['id']}>type_mouvement id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_type_mouvement']}{else}0{/if}" selected>id_type_mouvement de mouvement</option>
+         {if isset($type_mouvements)}    
+                    {foreach from=$type_mouvements item=champ}
+
+                        <option  value={$champ['id']}>type_mouvement id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_commercial de mouvement</label>
+
+         <select name="id_commercial"  class="form-control champ" id="id_commercial">   
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_commercial']}{else}0{/if}" selected>id_commercial de mouvement</option>
+         {if isset($personnes)}    
+                    {foreach from=$personnes item=champ}
+
+                        <option  value={$champ['id']}>personne id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_commercial']}{else}0{/if}" selected>id_commercial de mouvement</option>
+         {if isset($personnes)}    
+                    {foreach from=$personnes item=champ}
+
+                        <option  value={$champ['id']}>personne id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_commercial']}{else}0{/if}" selected>id_commercial de mouvement</option>
+         {if isset($personnes)}    
+                    {foreach from=$personnes item=champ}
+
+                        <option  value={$champ['id']}>personne id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_commercial']}{else}0{/if}" selected>id_commercial de mouvement</option>
+         {if isset($personnes)}    
+                    {foreach from=$personnes item=champ}
+
+                        <option  value={$champ['id']}>personne id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_users de mouvement</label>
+
+         <select name="id_users"  class="form-control champ" id="id_users">   
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_users']}{else}0{/if}" selected>id_users de mouvement</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_users']}{else}0{/if}" selected>id_users de mouvement</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_users']}{else}0{/if}" selected>id_users de mouvement</option>
+
+                                  {/foreach}
+                          {/if}
+
+                        <option  value="{if isset($mouvement)} {$mouvement['id_users']}{else}0{/if}" selected>id_users de mouvement</option>
+         {if isset($accountss)}    
+                    {foreach from=$accountss item=champ}
+
+                        <option  value={$champ['id']}>accounts id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_mouvement de mouvement</label>
+
+     <input class="form-control" type="date" name="date_mouvement"  value="{if isset($mouvement)} {$mouvement['date_mouvement']}{else} {/if}"  id="date_mouvement"  placeholder="date_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">object_mouvement de mouvement</label>
+
+     <input class="form-control" type="text" name="object_mouvement"  value="{if isset($mouvement)} {$mouvement['object_mouvement']}{else} {/if}"  id="object_mouvement"  placeholder="object_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">content_mouvement de mouvement</label>
+
+     <input class="form-control" type="text" name="content_mouvement"  value="{if isset($mouvement)} {$mouvement['content_mouvement']}{else} {/if}"  id="content_mouvement"  placeholder="content_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">total_ht_mouvement de mouvement</label>
+
+     <input class="form-control" type="number" name="total_ht_mouvement"  value="{if isset($mouvement)} {$mouvement['total_ht_mouvement']}{else}0{/if}"  id="total_ht_mouvement"  placeholder="total_ht_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tva_mouvement de mouvement</label>
+
+     <input class="form-control" type="number" name="tva_mouvement"  value="{if isset($mouvement)} {$mouvement['tva_mouvement']}{else}0{/if}"  id="tva_mouvement"  placeholder="tva_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">totalttc_mouvement de mouvement</label>
+
+     <input class="form-control" type="number" name="totalttc_mouvement"  value="{if isset($mouvement)} {$mouvement['totalttc_mouvement']}{else}0{/if}"  id="totalttc_mouvement"  placeholder="totalttc_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">totalltr_mouvement de mouvement</label>
+
+     <input class="form-control" type="text" name="totalltr_mouvement"  value="{if isset($mouvement)} {$mouvement['totalltr_mouvement']}{else} {/if}"  id="totalltr_mouvement"  placeholder="totalltr_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">avance_mouvement de mouvement</label>
+
+     <input class="form-control" type="number" name="avance_mouvement"  value="{if isset($mouvement)} {$mouvement['avance_mouvement']}{else}0{/if}"  id="avance_mouvement"  placeholder="avance_mouvement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">reste_mouvement de mouvement</label>
+
+     <input class="form-control" type="number" name="reste_mouvement"  value="{if isset($mouvement)} {$mouvement['reste_mouvement']}{else}0{/if}"  id="reste_mouvement"  placeholder="reste_mouvement"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_mouvement"  value="{if isset($mouvement)} {$mouvement['flag_mouvement']}{else}0{/if}"  id="flag_mouvement"   placeholder="flag_mouvement"   />
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Mouvement/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

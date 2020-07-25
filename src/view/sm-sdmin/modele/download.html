@@ -1,0 +1,18 @@
+
+<div class="card card-login mx-auto mt-6">
+    <div class="card-header">Génerer models avec la base de données  </div>
+    <div class="card-body">
+
+        <form method="post" action="{$url_base}SM_Admin/generate_model/nulle" enctype="multipart/form-data">
+
+
+            {include file='src/view/sm-sdmin/template/download.tpl'}
+
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" name="charger" value="Generer"/>
+                <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+            </div>
+        </form>
+
+    </div>
+</div>

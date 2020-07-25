@@ -1,0 +1,100 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Equipe/index">Index Equipe</a></li>
+                        <li><a href="{$url_base}Equipe/add">Ajout Equipe</a></li>
+                        <li><a href="{$url_base}Equipe/getID/1">Get id Equipe 1</a></li>
+                        <li><a href="{$url_base}Equipe/liste">Liste Equipe </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Equipe/add">
+     <input class="form-control" type="hidden" name="id"  value="0"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_equipe de equipe</label>
+
+     <input class="form-control" type="text" name="nom_equipe"  value=""  id="nom_equipe"  placeholder="nom_equipe"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">date_creation de equipe</label>
+
+     <input class="form-control" type="date" name="date_creation"  value=""  id="date_creation"  placeholder="date_creation"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">create_by de equipe</label>
+
+     <input class="form-control" type="number" name="create_by"  value="0"  id="create_by"  placeholder="create_by"   />
+
+          </div>
+
+
+                        <input class="form-control" type="hidden" name="flag_equipe"  value="0"  id="flag_equipe"   placeholder="flag_equipe"   />
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

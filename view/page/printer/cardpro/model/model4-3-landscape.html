@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>A4 landscape</title>
+
+  <!-- Normalize or reset CSS with your favorite library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+  <!-- Load paper.css for happy printing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
+
+  <!-- Set page size here: A5, A4 or A3 -->
+  <!-- Set also "landscape" if you need -->
+  <style>@page { size: A4 landscape }
+
+
+  .containeur {
+
+    width: 8.5cm;
+    height:  5.6cm;
+    margin: 0 auto;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.7);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #b3bead;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  }
+
+ .info {
+    width: 3cm;
+    /*height: 5.6cm;*/
+    float: left;
+    background: -moz-linear-gradient(45deg, #95a5a6 0%, rgba(208, 215, 216, 0) 56%, rgba(255, 255, 255, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #95a5a6 0%, rgba(208, 215, 216, 0) 56%, rgba(255, 255, 255, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #95a5a6 0%, rgba(208, 215, 216, 0) 56%, rgba(255, 255, 255, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-color: #0c0c0c;
+  }
+ .info .product {
+    width: 2.7cm;
+    height:3cm;
+    margin: 1%;
+    opacity: 0.5;
+  }
+ .info p {
+    width:3cm;
+    text-align: center;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    background-color: yellow;
+  }
+ .info .price {
+    width:3cm;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    background-color: .fc9200;
+  }
+ .info .price h2 {
+    width:3cm;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+    padding-top: 10px;
+    background-color: white;
+  }
+
+  .payment {
+    width: 5.5cm;
+    height:  5.2cm;
+    float: right;
+  }
+
+  .checkout {
+    width: 5.5cm;
+    height:  5.2cm;
+    background-color: blue;
+  }
+  .checkout input {
+    margin-bottom: 15px;
+  }
+  .checkout label {
+    float: left;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.6em;
+    padding: 0 0 5px 10px;
+  }
+  .checkout .cvc-label {
+    margin-left: 25px;
+  }
+  .checkout .card {
+    width: 29%;
+    margin: 0 10% 25px 10%;
+    border: none;
+    background: none;
+    height: 50px;
+    cursor: pointer;
+    -webkit-filter: grayscale(100%);
+    /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+  }
+  .checkout .card:focus {
+    -webkit-filter: none;
+    filter: none;
+  }
+  .checkout .visa {
+    background-image: url("http://enwaara.se/codepen/visa.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+  }
+  .checkout .logo {
+    padding: 5px;
+    float: left;
+    height:2cm;
+    width: 2cm;
+  }
+  .checkout .cardnumber, .checkout .cardholder, .checkout .cvc {
+    width: 100%;
+    background: none;
+    border: 1px solid #6C7A89;
+    padding: 8px 19px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+  }
+  .checkout ::-webkit-input-placeholder {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: #BDC3C7;
+  }
+  .checkout .cardnumber {
+    letter-spacing: 3px;
+  }
+  .checkout .cardnumber::-webkit-input-placeholder {
+    font-size: 1em;
+  }
+  .checkout .left {
+    width: 41%;
+    border: 1px solid #6C7A89;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 3px 5px;
+    float: left;
+  }
+  .checkout .left .month, .checkout .left .year {
+    background: none;
+    border: none;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    float: left;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    color: #BDC3C7;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .checkout .left .month option, .checkout .left .year option {
+    background: #ECECEC;
+  }
+  .checkout .left p {
+    float: left;
+    padding-top: 2px;
+    font-size: 1.2em;
+    color: #BDC3C7;
+    letter-spacing: 3px;
+  }
+  .checkout #cvc {
+    width: 48%;
+    float: left;
+    margin-left: 11%;
+  }
+  .checkout .btn {
+    background: #03C9A9;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #ECECEC;
+    cursor: pointer;
+  }
+  .checkout .btn:hover {
+    background: #16A085;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  table {
+    width: 100%;
+  }
+
+  th {
+    height: 50px;
+  }
+  body { /* Modifications : la couleur de fond de page - la police - l'unité utilisée pour la taille de la police  */
+    font-family :Serif;
+    font-size :15pt;
+  }
+
+  #page { /* Modifications : suppression de la bordure - marges */
+    margin :0;
+    border :none;
+  }
+
+  #banner, #menuright, #footer { /* Les éléments qui ne seront pas affichés  */
+    display :none;
+  }
+  </style>
+</head>
+
+<!-- Set "A5", "A4" or "A3" for class name -->
+<!-- Set also "landscape" if you need -->
+<body class="A4 landscape">
+
+  <!-- Each sheet element should have the class "sheet" -->
+  <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
+  <section class="sheet padding-10mm">
+
+    <!-- Write HTML just like a web page -->
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <div class="badge" style="">
+
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+                  
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="badge" style="">
+
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="badge" style="">
+
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <div class="containeur">
+
+              <div class="info">
+
+                <img class="product" src="http://enwaara.se/codepen/product.png"/>
+
+                <p>Activity Bracelet Surge</p>
+                <p>Black</p>
+
+                <div class="price">
+
+                  <h2>$ 2 700</h2>
+
+                </div>
+              </div>
+
+              <div class="payment">
+
+                <form class="checkout">
+                  <img class="logo" src="image/logo.gif"/>.
+
+                  <label>Credit Card Number</label>
+
+                  <label>Card Holder</label>
+
+                  <label>Expiration Date</label>
+                  <label class="cvc-label">CVC/CVV</label>
+                  <div class="left">
+                    <p>/</p>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+</body>
+
+</html>

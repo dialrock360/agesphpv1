@@ -1,0 +1,122 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Account_sessions/index">Index Account_sessions</a></li>
+                        <li><a href="{$url_base}Account_sessions/add">Ajout Account_sessions</a></li>
+                        <li><a href="{$url_base}Account_sessions/getID/1">Get id Account_sessions 1</a></li>
+                        <li><a href="{$url_base}Account_sessions/liste">Liste Account_sessions </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Account_sessions/add">
+
+          <div class="form-group">
+
+                        <label class="control-label">session_id de account_sessions</label>
+
+     <input class="form-control" type="text" name="session_id"  value=""  id="session_id"  placeholder="session_id"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">account_id de account_sessions</label>
+
+         <select name="account_id"  class="form-control champ" id="account_id">   
+
+         {if isset($accountss)}    
+                    {foreach from=$accountss item=champ}
+
+                        <option  value={$champ['id']}>accounts id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+
+         {if isset($accountss)}    
+                    {foreach from=$accountss item=champ}
+         {if isset($accountss)}    
+                    {foreach from=$accountss item=champ}
+
+                        <option  value={$champ['id']}>accounts id {$champ['id']}</option>
+                        <option  value={$champ['id']}>accounts id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">account_token de account_sessions</label>
+
+     <input class="form-control" type="text" name="account_token"  value=""  id="account_token" required placeholder="account_token"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">login_time de account_sessions</label>
+
+     <input class="form-control" type="time" name="login_time"  value=""  id="login_time"  placeholder="login_time"   />
+
+          </div>
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

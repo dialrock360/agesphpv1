@@ -1,0 +1,125 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Employee/index">Index Employee</a></li>
+                        <li><a href="{$url_base}Employee/add">Ajout Employee</a></li>
+                        <li><a href="{$url_base}Employee/getID/1">Get id Employee 1</a></li>
+                        <li><a href="{$url_base}Employee/liste">Liste Employee </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+               								{if isset($ok)}
+               								{if $ok != 0}
+                    								<div class="alert alert-success">Données ajoutées!</div>
+               								{else}
+                    								<div class="alert alert-danger">Erreur!</div>
+               								{/if}
+               								{/if}
+                                      <form method="post" action="{$url_base}Employee/update">
+                                                  <input class="form-control" type="hidden" name="id" value="{if isset($employee)} {$employee['id']} {/if}" id="id"/>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Departements </label>
+                                       <select name="id_departement" class="form-control champ" >                                                <option selected value="{$employee['id_departement']}">{if isset($employee)} {$employee['id_departement']}   {/if}</option>
+                                                {foreach from=$departements item=champ}
+                                                <option value="{$champ['id']}">{$champ['id_service']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">id_categorie_pro de Employee</label>
+                                                <input class="form-control" type="number" name="id_categorie_pro" value="{if isset($employee)} {$employee['id_categorie_pro']} {/if}"  id="id_categorie_pro"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">id_ruperieur_hierarchique de Employee</label>
+                                                <input class="form-control" type="number" name="id_ruperieur_hierarchique" value="{if isset($employee)} {$employee['id_ruperieur_hierarchique']} {/if}"  id="id_ruperieur_hierarchique"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">avatar_employe de Employee</label>
+                                                <input class="form-control" type="text" name="avatar_employe" value="{if isset($employee)} {$employee['avatar_employe']} {/if}" id="avatar_employe"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">matricul_employee de Employee</label>
+                                                <input class="form-control" type="text" name="matricul_employee" value="{if isset($employee)} {$employee['matricul_employee']} {/if}" id="matricul_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">cv_employee de Employee</label>
+                                                <input class="form-control" type="text" name="cv_employee" value="{if isset($employee)} {$employee['cv_employee']} {/if}" id="cv_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">salaire_employee de Employee</label>
+                                                <input class="form-control" type="number" name="salaire_employee" value="{if isset($employee)} {$employee['salaire_employee']} {/if}"  id="salaire_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">nom_employee de Employee</label>
+                                                <input class="form-control" type="text" name="nom_employee" value="{if isset($employee)} {$employee['nom_employee']} {/if}" id="nom_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">nature_employee de Employee</label>
+                                                <input class="form-control" type="text" name="nature_employee" value="{if isset($employee)} {$employee['nature_employee']} {/if}" id="nature_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">tel_employee de Employee</label>
+                                                <input class="form-control" type="text" name="tel_employee" value="{if isset($employee)} {$employee['tel_employee']} {/if}" id="tel_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">email_employee de Employee</label>
+                                                <input class="form-control" type="text" name="email_employee" value="{if isset($employee)} {$employee['email_employee']} {/if}" id="email_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">info_employee de Employee</label>
+                                                <input class="form-control" type="text" name="info_employee" value="{if isset($employee)} {$employee['info_employee']} {/if}" id="info_employee"/>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">flag_employee de Employee</label>
+                                                <input class="form-control" type="text" name="flag_employee" value="{if isset($employee)} {$employee['flag_employee']} {/if}" id="flag_employee"/>
+                                       </div>
+
+
+                                              <div class="form-group">
+                                                         <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                                                         <a class="btn btn-info" href="{$url_base}Employee/liste">Retour</a>
+                                                     </div>
+                                      </form>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

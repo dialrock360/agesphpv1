@@ -1,0 +1,167 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Produit/index">Index Produit</a></li>
+                        <li><a href="{$url_base}Produit/add">Ajout Produit</a></li>
+                        <li><a href="{$url_base}Produit/getID/1">Get id Produit 1</a></li>
+                        <li><a href="{$url_base}Produit/liste">Liste Produit </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Produit/add">
+     <input class="form-control" type="hidden" name="id"  value="0"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_produit de produit</label>
+
+     <input class="form-control" type="text" name="nom_produit"  value=""  id="nom_produit" required placeholder="nom_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">type_produit de produit</label>
+
+     <input class="form-control" type="text" name="type_produit"  value=""  id="type_produit"  placeholder="type_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cout_produit de produit</label>
+
+     <input class="form-control" type="number" name="cout_produit"  value="0"  id="cout_produit"  placeholder="cout_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">valeur_produit de produit</label>
+
+     <input class="form-control" type="number" name="valeur_produit"  value="0"  id="valeur_produit"  placeholder="valeur_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">poids_produit de produit</label>
+
+     <input class="form-control" type="number" name="poids_produit"  value="0"  id="poids_produit"  placeholder="poids_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">taille_produit de produit</label>
+
+     <input class="form-control" type="number" name="taille_produit"  value="0"  id="taille_produit"  placeholder="taille_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">longueur_produit de produit</label>
+
+     <input class="form-control" type="number" name="longueur_produit"  value="0"  id="longueur_produit"  placeholder="longueur_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">largeur_produit de produit</label>
+
+     <input class="form-control" type="number" name="largeur_produit"  value="0"  id="largeur_produit"  placeholder="largeur_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">volume_produit de produit</label>
+
+     <input class="form-control" type="number" name="volume_produit"  value="0"  id="volume_produit"  placeholder="volume_produit"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">deitail_produit de produit</label>
+
+     <textarea rows="5" name="deitail_produit"  id="deitail_produit" >  </textarea>
+
+          </div>
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

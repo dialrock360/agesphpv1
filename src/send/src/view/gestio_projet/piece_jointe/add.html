@@ -1,0 +1,82 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Piece_jointe/index">Index Piece_jointe</a></li>
+                        <li><a href="{$url_base}Piece_jointe/add">Ajout Piece_jointe</a></li>
+                        <li><a href="{$url_base}Piece_jointe/getID/1">Get id Piece_jointe 1</a></li>
+                        <li><a href="{$url_base}Piece_jointe/liste">Liste Piece_jointe </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+				<div class="row">
+					<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+               								{if isset($ok)}
+               								{if $ok != 0}
+                    								<div class="alert alert-success">Données ajoutées!</div>
+               								{else}
+                    								<div class="alert alert-danger">Erreur!</div>
+               								{/if}
+               								{/if}
+                                      <form method="post" action="{$url_base}Piece_jointe/add">
+                                                  <input class="form-control" type="hidden" name="id" value="0" id="id"/>
+                                        <div class="form-group">
+                                                <label class="control-label">Liste de Taches </label>
+                                       <select name="id_tache" class="form-control champ" >                                                <option selected disabled>--Choisir Tache --</option>
+                                                {foreach from=$taches item=champ}
+                                                <option value="{$champ['id']}">{$champ['id_projet']}  </option>
+                                               {/foreach}
+                                       </select>
+                                       </div>
+                                        <div class="form-group">
+                                                <label class="control-label">path_piece_jointe de Piece_jointe</label>
+                                                <input class="form-control" type="text" name="path_piece_jointe" id="path_piece_jointe"/>
+                                       </div>
+
+
+                                              <div class="form-group">
+                                                      <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                                                      <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                                              </div>
+
+                                      </form>
+					</div> 
+				</div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

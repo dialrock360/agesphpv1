@@ -1,0 +1,184 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}V_conditionement_article/index">Index V_conditionement_article</a></li>
+                        <li><a href="{$url_base}V_conditionement_article/add">Ajout V_conditionement_article</a></li>
+                        <li><a href="{$url_base}V_conditionement_article/getID/1">Get id V_conditionement_article 1</a></li>
+                        <li><a href="{$url_base}V_conditionement_article/liste">Liste V_conditionement_article </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}V_conditionement_article/update">
+
+          <div class="form-group">
+
+                        <label class="control-label">id de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="id"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['id']}{else}0{/if}"  id="id"  placeholder="id"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_article_en_stock de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="id_article_en_stock"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['id_article_en_stock']}{else}0{/if}"  id="id_article_en_stock"  placeholder="id_article_en_stock"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">qnt_unite de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="qnt_unite"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['qnt_unite']}{else}0{/if}"  id="qnt_unite"  placeholder="qnt_unite"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">pxa_u_article_en_stock de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="pxa_u_article_en_stock"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['pxa_u_article_en_stock']}{else}0{/if}"  id="pxa_u_article_en_stock"  placeholder="pxa_u_article_en_stock"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">cout_achat_conditionement_article de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="cout_achat_conditionement_article"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['cout_achat_conditionement_article']}{else}0{/if}"  id="cout_achat_conditionement_article"  placeholder="cout_achat_conditionement_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">pxv_u_conditionement_article de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="pxv_u_conditionement_article"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['pxv_u_conditionement_article']}{else}0{/if}"  id="pxv_u_conditionement_article"  placeholder="pxv_u_conditionement_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">pxv_bar_conditionement_article de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="pxv_bar_conditionement_article"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['pxv_bar_conditionement_article']}{else}0{/if}"  id="pxv_bar_conditionement_article"  placeholder="pxv_bar_conditionement_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">pxv_conditionement_article de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="pxv_conditionement_article"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['pxv_conditionement_article']}{else}0{/if}"  id="pxv_conditionement_article"  placeholder="pxv_conditionement_article"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_conditionement de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="id_conditionement"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['id_conditionement']}{else}0{/if}"  id="id_conditionement"  placeholder="id_conditionement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_conditionement de v_conditionement_article</label>
+
+     <input class="form-control" type="text" name="nom_conditionement"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['nom_conditionement']}{else} {/if}"  id="nom_conditionement"  placeholder="nom_conditionement"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">id_unite de v_conditionement_article</label>
+
+     <input class="form-control" type="number" name="id_unite"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['id_unite']}{else}0{/if}"  id="id_unite"  placeholder="id_unite"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">nom_unite_conditionement de v_conditionement_article</label>
+
+     <input class="form-control" type="text" name="nom_unite_conditionement"  value="{if isset($v_conditionement_article)} {$v_conditionement_article['nom_unite_conditionement']}{else} {/if}"  id="nom_unite_conditionement"  placeholder="nom_unite_conditionement"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}V_conditionement_article/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

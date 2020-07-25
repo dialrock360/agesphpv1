@@ -1,0 +1,89 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Categorie/index">Index Categorie</a></li>
+                        <li><a href="{$url_base}Categorie/add">Ajout Categorie</a></li>
+                        <li><a href="{$url_base}Categorie/getID/1">Get id Categorie 1</a></li>
+                        <li><a href="{$url_base}Categorie/liste">Liste Categorie </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($categories) && $categories != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Categorie</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>ID_CAT</th>
+                                 <th>IDFA</th>
+                                 <th>NOM_CAT</th>
+                                 <th>ACHAT</th>
+                                 <th>VENTE</th>
+                                 <th>COMPT</th>
+                                 <th>Flag</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$categories item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id_cat"]}</td>
+                                 <td>{$obj["idfa"]}</td>
+                                 <td>{$obj["nom_cat"]}</td>
+                                 <td>{$obj["achat"]}</td>
+                                 <td>{$obj["vente"]}</td>
+                                 <td>{$obj["compt"]}</td>
+                                 <td>{$obj["flag"]}</td>
+                                    <td><a href="{$url_base}Categorie/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Categorie/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

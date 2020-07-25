@@ -1,0 +1,91 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}V_famille/index">Index V_famille</a></li>
+                        <li><a href="{$url_base}V_famille/add">Ajout V_famille</a></li>
+                        <li><a href="{$url_base}V_famille/getID/1">Get id V_famille 1</a></li>
+                        <li><a href="{$url_base}V_famille/liste">Liste V_famille </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($v_familles) && $v_familles != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE V_famille</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Id_service</th>
+                                 <th>Nom_famille</th>
+                                 <th>Color_famille</th>
+                                 <th>Nbr_categorie_famille</th>
+                                 <th>Valeur_famille</th>
+                                 <th>Flag_famille</th>
+                                 <th>Nom_service</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$v_familles item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["id_service"]}</td>
+                                 <td>{$obj["nom_famille"]}</td>
+                                 <td>{$obj["color_famille"]}</td>
+                                 <td>{$obj["nbr_categorie_famille"]}</td>
+                                 <td>{$obj["valeur_famille"]}</td>
+                                 <td>{$obj["flag_famille"]}</td>
+                                 <td>{$obj["nom_service"]}</td>
+                                    <td><a href="{$url_base}V_famille/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}V_famille/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

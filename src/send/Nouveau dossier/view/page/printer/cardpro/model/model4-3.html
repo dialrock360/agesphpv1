@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>A4</title>
+
+  <!-- Normalize or reset CSS with your favorite library -->
+
+  <!-- Load paper.css for happy printing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
+
+  <!-- Set page size here: A5, A4 or A3 -->
+  <!-- Set also "landscape" if you need -->
+  <style>@page { size: A4 }
+
+  div{
+
+
+
+    width: 5.6cm;
+    height:  8.5cm;
+    margin: 5%;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.7);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #b3bead;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     /* background-image: url("image/img1.jpg");*/
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+  table {
+    width: 100%;
+  }
+
+  th {
+    height: 50px;
+  }
+  body { /* Modifications : la couleur de fond de page - la police - l'unité utilisée pour la taille de la police  */
+    font-family :Serif;
+    font-size :15pt;
+  }
+
+  #page { /* Modifications : suppression de la bordure - marges */
+    margin :0;
+    border :none;
+  }
+
+  #banner, #menuright, #footer { /* Les éléments qui ne seront pas affichés  */
+    display :none;
+  }
+
+  h1#top { /* Affichage du titre */
+    margin :0;
+    padding :0;
+    text-indent :0;
+    line-height :25pt;
+    font-size :25pt;
+  }
+
+
+  img {
+      border: 1px outset #ddd;
+      border-radius: 8px;
+      padding: 5px;
+      float: left;
+      height:3cm;
+      margin: 1%;
+      width: 2.5cm;
+  }
+  h2 {
+      font-size: 15px;
+      color: #ad1ee8;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      display: inline-block
+  }
+  article {
+      font-size: 15px;
+      color:blue;
+      padding: 8px;
+
+  }
+
+  </style>
+</head>
+
+<!-- Set "A5", "A4" or "A3" for class name -->
+<!-- Set also "landscape" if you need -->
+<body class="A4">
+
+  <!-- Each sheet element should have the class "sheet" -->
+  <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
+  <section class="sheet padding-10mm">
+
+    <!-- Write HTML just like a web page -->
+
+
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          <div class="badge" style="">
+              <p >
+                  <img src="image/img1.jpg" alt="Paris" >
+                  <article> A4 document.</article>
+                  <article> A3 document.</article>
+                  <article> A2 document.</article>
+                  <article> A2 document.</article>
+              </p>
+
+
+              <h2>Border around text!</h2>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+        <td>
+          <div class="badge" style="">
+            <article>This is an A4 document.</article>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

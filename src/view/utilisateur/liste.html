@@ -1,0 +1,115 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Utilisateur/index">Index Utilisateur</a></li>
+                        <li><a href="{$url_base}Utilisateur/add">Ajout Utilisateur</a></li>
+                        <li><a href="{$url_base}Utilisateur/getID/1">Get id Utilisateur 1</a></li>
+                        <li><a href="{$url_base}Utilisateur/liste">Liste Utilisateur </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($utilisateurs) && $utilisateurs != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Utilisateur</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>IDU</th>
+                                 <th>CNI</th>
+                                 <th>PRENOM_USER</th>
+                                 <th>NOM_USER</th>
+                                 <th>LOGIN</th>
+                                 <th>SEXE_USER</th>
+                                 <th>POSTE</th>
+                                 <th>SALAIRE</th>
+                                 <th>STATUT</th>
+                                 <th>DATNAIS</th>
+                                 <th>DATEM</th>
+                                 <th>LEVESECURITY</th>
+                                 <th>PASSE</th>
+                                 <th>ADRESS</th>
+                                 <th>EMAIL</th>
+                                 <th>NUM_UER</th>
+                                 <th>PHOTO</th>
+                                 <th>INFOS</th>
+                                 <th>CACHER</th>
+                                 <th>FLAG</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$utilisateurs item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["idu"]}</td>
+                                 <td>{$obj["cni"]}</td>
+                                 <td>{$obj["prenom_user"]}</td>
+                                 <td>{$obj["nom_user"]}</td>
+                                 <td>{$obj["login"]}</td>
+                                 <td>{$obj["sexe_user"]}</td>
+                                 <td>{$obj["poste"]}</td>
+                                 <td>{$obj["salaire"]}</td>
+                                 <td>{$obj["statut"]}</td>
+                                 <td>{$obj["datnais"]}</td>
+                                 <td>{$obj["datem"]}</td>
+                                 <td>{$obj["levesecurity"]}</td>
+                                 <td>{$obj["passe"]}</td>
+                                 <td>{$obj["adress"]}</td>
+                                 <td>{$obj["email"]}</td>
+                                 <td>{$obj["num_uer"]}</td>
+                                 <td>{$obj["photo"]}</td>
+                                 <td>{$obj["infos"]}</td>
+                                 <td>{$obj["cacher"]}</td>
+                                 <td>{$obj["flag"]}</td>
+                                    <td><a href="{$url_base}Utilisateur/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Utilisateur/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

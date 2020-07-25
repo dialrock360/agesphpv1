@@ -1,0 +1,91 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Conger/index">Index Conger</a></li>
+                        <li><a href="{$url_base}Conger/add">Ajout Conger</a></li>
+                        <li><a href="{$url_base}Conger/getID/1">Get id Conger 1</a></li>
+                        <li><a href="{$url_base}Conger/liste">Liste Conger </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($congers) && $congers != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Conger</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Salarier_id</th>
+                                 <th>Type_conger_id</th>
+                                 <th>Id</th>
+                                 <th>Date_debut</th>
+                                 <th>Date_fin</th>
+                                 <th>Status_conger</th>
+                                 <th>Justificatif</th>
+                                 <th>Conger_payer</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$congers item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["salarier_id"]}</td>
+                                 <td>{$obj["type_conger_id"]}</td>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["date_debut"]}</td>
+                                 <td>{$obj["date_fin"]}</td>
+                                 <td>{$obj["status_conger"]}</td>
+                                 <td>{$obj["justificatif"]}</td>
+                                 <td>{$obj["conger_payer"]}</td>
+                                    <td><a href="{$url_base}Conger/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Conger/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

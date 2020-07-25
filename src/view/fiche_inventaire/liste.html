@@ -1,0 +1,85 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Fiche_inventaire/index">Index Fiche_inventaire</a></li>
+                        <li><a href="{$url_base}Fiche_inventaire/add">Ajout Fiche_inventaire</a></li>
+                        <li><a href="{$url_base}Fiche_inventaire/getID/1">Get id Fiche_inventaire 1</a></li>
+                        <li><a href="{$url_base}Fiche_inventaire/liste">Liste Fiche_inventaire </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($fiche_inventaires) && $fiche_inventaires != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Fiche_inventaire</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Idl</th>
+                                 <th>IDE</th>
+                                 <th>Conten</th>
+                                 <th>Datefiche</th>
+                                 <th>Flag</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$fiche_inventaires item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["idl"]}</td>
+                                 <td>{$obj["ide"]}</td>
+                                 <td>{$obj["conten"]}</td>
+                                 <td>{$obj["datefiche"]}</td>
+                                 <td>{$obj["flag"]}</td>
+                                    <td><a href="{$url_base}Fiche_inventaire/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Fiche_inventaire/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

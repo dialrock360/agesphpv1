@@ -1,0 +1,109 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page liste</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Contrat/index">Index Contrat</a></li>
+                        <li><a href="{$url_base}Contrat/add">Ajout Contrat</a></li>
+                        <li><a href="{$url_base}Contrat/getID/1">Get id Contrat 1</a></li>
+                        <li><a href="{$url_base}Contrat/liste">Liste Contrat </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+
+          {if isset($contrats) && $contrats != null}
+        <div class="table-responsive">
+        <table class="table table-striped">
+                  <caption  > LISTE DE Contrat</caption>
+
+                  <thead>
+                            <tr>
+                                 <th>Id</th>
+                                 <th>Type_contrat_id</th>
+                                 <th>Personne_id</th>
+                                 <th>Departement_id</th>
+                                 <th>Modalite_contrat_id</th>
+                                 <th>Metier</th>
+                                 <th>Cv_contrat</th>
+                                 <th>Statut_contrat</th>
+                                 <th>Numsecu_sire</th>
+                                 <th>Datedebut</th>
+                                 <th>Datefin</th>
+                                 <th>Duree_essai</th>
+                                 <th>Avantages_contrat</th>
+                                 <th>Preavie_demande_conger</th>
+                                 <th>Nbr_jr_conge_par_mois_tavail</th>
+                                 <th>Etat_contrat</th>
+                                 <th>Flag_contract</th>
+                            <td>Action</td>
+                            <td>Action</td>
+                            </tr>
+                  </thead>
+
+                  {foreach from=$contrats item=obj}
+                            <tr>
+                  <tbody>
+                                 <td>{$obj["id"]}</td>
+                                 <td>{$obj["type_contrat_id"]}</td>
+                                 <td>{$obj["personne_id"]}</td>
+                                 <td>{$obj["departement_id"]}</td>
+                                 <td>{$obj["modalite_contrat_id"]}</td>
+                                 <td>{$obj["metier"]}</td>
+                                 <td>{$obj["cv_contrat"]}</td>
+                                 <td>{$obj["statut_contrat"]}</td>
+                                 <td>{$obj["numsecu_sire"]}</td>
+                                 <td>{$obj["datedebut"]}</td>
+                                 <td>{$obj["datefin"]}</td>
+                                 <td>{$obj["duree_essai"]}</td>
+                                 <td>{$obj["avantages_contrat"]}</td>
+                                 <td>{$obj["preavie_demande_conger"]}</td>
+                                 <td>{$obj["nbr_jr_conge_par_mois_tavail"]}</td>
+                                 <td>{$obj["etat_contrat"]}</td>
+                                 <td>{$obj["flag_contract"]}</td>
+                                    <td><a href="{$url_base}Contrat/edit/{$obj['']}">Editer</a></td>
+                                    <td><a href="{$url_base}Contrat/delete/{$obj['']}">Supprimer</a></td>
+                            </tr>
+                  </tbody>
+                         {/foreach}
+                     </table>
+                  </div>
+                  {else}
+                  Liste vide
+         {/if}
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

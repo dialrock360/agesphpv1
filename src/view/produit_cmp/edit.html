@@ -1,0 +1,108 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page edit</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Produit_cmp/index">Index Produit_cmp</a></li>
+                        <li><a href="{$url_base}Produit_cmp/add">Ajout Produit_cmp</a></li>
+                        <li><a href="{$url_base}Produit_cmp/getID/1">Get id Produit_cmp 1</a></li>
+                        <li><a href="{$url_base}Produit_cmp/liste">Liste Produit_cmp </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Produit_cmp/update">
+     <input class="form-control" type="hidden" name="idpcmp"  value="{if isset($produit_cmp)} {$produit_cmp['idpcmp']}{else}0{/if}"  id="idpcmp"  placeholder="idpcmp"   />
+
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabidp de produit_cmp</label>
+
+     <input class="form-control" type="text" name="tabidp"  value="{if isset($produit_cmp)} {$produit_cmp['tabidp']}{else} {/if}"  id="tabidp"  placeholder="tabidp"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabqnt de produit_cmp</label>
+
+     <input class="form-control" type="text" name="tabqnt"  value="{if isset($produit_cmp)} {$produit_cmp['tabqnt']}{else} {/if}"  id="tabqnt"  placeholder="tabqnt"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">tabmts de produit_cmp</label>
+
+     <input class="form-control" type="text" name="tabmts"  value="{if isset($produit_cmp)} {$produit_cmp['tabmts']}{else} {/if}"  id="tabmts"  placeholder="tabmts"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">prv de produit_cmp</label>
+
+     <input class="form-control" type="number" name="prv"  value="{if isset($produit_cmp)} {$produit_cmp['prv']}{else}0{/if}"  id="prv"  placeholder="prv"   />
+
+          </div>
+
+                  <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+                        <a class="btn btn-info" href="{$url_base}Produit_cmp/liste">Retour</a>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+

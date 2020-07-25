@@ -1,0 +1,115 @@
+
+
+     <html>
+          <head>
+                 <meta charset="UTF-8">
+                 <title>page add</title>
+                 <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+                 <link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+                 <style>
+                   h1{
+                        color: #40007d;
+                   }
+                 </style>
+          </head>
+          <body>
+                <div class="nav navbar navbar-default navbar-fixed-top">
+                   <ul class="nav navbar-nav">
+                        <!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+                        <li><a href="{$url_base}/SM_Admin/home">Accueil</a></li>
+                        <li><a href="{$url_base}Modepaie/index">Index Modepaie</a></li>
+                        <li><a href="{$url_base}Modepaie/add">Ajout Modepaie</a></li>
+                        <li><a href="{$url_base}Modepaie/getID/1">Get id Modepaie 1</a></li>
+                        <li><a href="{$url_base}Modepaie/liste">Liste Modepaie </a></li>
+                   </ul>
+                   <div class="thumbnail pull-right">
+                         <a href="{$url_base}SM_Admin/index">
+                            <img src="{$url_base}public/image/logo.jpg" height="64" width="64" class="img-circle " />
+                            <div class="caption">
+                               <p>Samane UI Manager</p>
+                            </div>
+                        </a>
+                   </div>
+               </div>
+               <div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:150px;">
+                    <div class="panel panel-info">
+                   	<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
+                    		<div class="panel-body">
+
+
+<div class="row">
+<div class="col-md-10  col-xs-12 col-md-offset-1" style="margin-top:20px;">
+{if isset($ok)}
+{if $ok != 0}
+<div class="alert alert-success">Données ajoutées!</div>
+{else}<div class="alert alert-danger">Erreur!</div>
+{/if}
+{/if}
+<form method="post" action="{$url_base}Modepaie/add">
+     <input class="form-control" type="hidden" name="id"  value="0"  id="id"  placeholder="id"   />
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">salarier_id de modepaie</label>
+
+         <select name="salarier_id"  class="form-control champ" id="salarier_id">   
+
+         {if isset($salariers)}    
+                    {foreach from=$salariers item=champ}
+
+                        <option  value={$champ['id']}>salarier id {$champ['id']}</option>
+                                  {/foreach}
+                          {/if}
+          </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">typepaie de modepaie</label>
+
+     <input class="form-control" type="text" name="typepaie"  value=""  id="typepaie"  placeholder="typepaie"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">domiciliation de modepaie</label>
+
+     <input class="form-control" type="text" name="domiciliation"  value=""  id="domiciliation"  placeholder="domiciliation"   />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                        <label class="control-label">iban de modepaie</label>
+
+     <input class="form-control" type="text" name="iban"  value=""  id="iban"  placeholder="iban"   />
+
+          </div>
+
+                  <div class="form-group">
+                         <input class="btn btn-success" type="submit" name="valider" value="Envoyer"/>
+                         <input class="btn btn-danger" type="reset" name="annuler" value="Annuler"/>
+                  </div>
+                 </form>
+            </div>
+      </div>
+
+
+                    		</div>
+                   	</div>
+                    </div>
+              </div>
+          </body>
+       </html>
+
